@@ -1,0 +1,83 @@
+@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Pages;
+
+@*Add scripts and stylesheets*@
+
+<div class="@Model.CssClass">
+  
+    <ul class="mobile-sub wsmenu-list">
+        @foreach (var node in Model.Nodes)
+        {
+        @RenderSubLevelsRecursive(node);
+        }
+    </ul>
+</div>
+
+@*Here is specified the rendering for the sub levels*@
+@helper RenderSubLevelsRecursive(NodeViewModel node)
+{
+    <li>
+
+        @if (node.ChildNodes.Count > 0)
+    {
+            <a href="@node.Url" class="menu-arrow">@node.Title</a>
+            <div class="megamenu clearfix halfmenu">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        @if (node.IsCurrentlyOpened)
+                        {
+                           <div class="col-lg-4 col-md-12">
+                            <ul class="wstliststy02 clearfix">
+                                @foreach (var childNode in node.ChildNodes)
+                                {
+                                    @RenderSubLevelsRecursive(childNode)
+                                }
+                            </ul>
+                            </div>
+                            }
+                            else
+                            {
+                            <div class="col-lg-4 col-md-12">
+                            <ul class="wstliststy02 clearfix">
+                                @foreach (var childNode in node.ChildNodes)
+                                {
+                                    @RenderSubLevelsRecursive(childNode)
+                                }
+                            </ul>
+                              </div>
+                            }
+
+                        </div>
+                </div>
+            </div>
+
+
+        }
+        else
+        {
+            <a href="@node.Url" target="@node.LinkTarget">@node.Title</a>
+
+        }
+
+    </li>
+}
+
+
+
+@*Resolves the class that will be added for each node depending whether it is selected*@
+@helper GetClass(NodeViewModel node)
+{
+    if (node.IsCurrentlyOpened)
+    {
+        @Html.Raw("active");
+    }
+    else if (node.HasChildOpen)
+    {
+        @Html.Raw("items-expanded");
+    }
+}
+

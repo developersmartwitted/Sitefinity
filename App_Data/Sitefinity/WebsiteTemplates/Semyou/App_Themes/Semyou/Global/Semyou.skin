@@ -1,0 +1,2 @@
+﻿<%@ Register Assembly="Telerik.Sitefinity.Search.Impl" Namespace="Telerik.Sitefinity.Services.Search.Web.UI.Public" TagPrefix="sfSearch" %>
+<sfSearch:SearchBox runat="server" LayoutTemplatePath="~/Custom/Templates/Search/SearchBox.ascx" ></sfSearch:SearchBox>

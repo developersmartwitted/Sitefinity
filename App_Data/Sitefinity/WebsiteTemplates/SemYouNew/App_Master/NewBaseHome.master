@@ -1,0 +1,272 @@
+﻿<%@ Master Language="C#" %>
+
+<%@ Register TagPrefix="sf" Namespace="Telerik.Sitefinity.Web.UI" Assembly="Telerik.Sitefinity" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/images/new_images/favicon-1.ico" type="image/icon"/>
+    <title>Semyou</title>
+    <%--    <link rel="stylesheet" type="text/css" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/css/styles.css" />--%>
+    <%--<link rel="stylesheet" type="/text/css" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/css/slick.css" />
+    <link rel="stylesheet" type="/text/css" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/css/animations.css" />
+    <link rel="stylesheet" type="/text/css" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/css/slick-theme.css" />--%>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <%-- <sf:ResourceLinks id="resourcesLinks" runat="server">
+   <sf:ResourceFile name="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" />
+   <sf:resourcefile name="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+</sf:ResourceLinks>--%>
+    
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div id="fb-root"></div>
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <div id="featured" class="container">
+
+            <div class="header">
+                <div class="right_data">
+                    <asp:ContentPlaceHolder ID="cph_right_data" runat="server"></asp:ContentPlaceHolder>
+                    <%--<a href="/"><img src="/templateimages/logo.png" alt="logo" /></a>--%>
+                </div>
+
+                <div class="logo">
+                    <asp:ContentPlaceHolder ID="cphLogo" runat="server"></asp:ContentPlaceHolder>
+                    <%--<a href="/"><img src="/templateimages/logo.png" alt="logo" /></a>--%>
+                </div>
+                <div class="clear"></div>
+                <div class="menu">
+                    <asp:ContentPlaceHolder ID="cphMenu" runat="server"></asp:ContentPlaceHolder>
+                    <%--
+                            <ul>
+                                            <li><a class="active" href="#">Home</a></li>
+                                            <li><a href="#">Benefits</a></li>
+                                            <li><a href="#">Tour</a></li>
+                                            <li><a href="#">Cloud Solution</a></li>
+                                            <li><a href="#">Cloud products</a></li>
+                                            <li><a href="#">Service</a></li>
+                                            <li><a href="#">Partner</a></li>
+                                            <li><a href="#">Support</a></li>
+                                            <li><a href="#">About</a></li>
+                                        </ul>
+                    --%>
+                </div>
+
+
+            </div>
+            <div>
+                <asp:ContentPlaceHolder ID="cphContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <%--<div class="sliader">
+                    <asp:ContentPlaceHolder ID="cphSlider" runat="server"></asp:ContentPlaceHolder>
+                    <div class="slider_bottom_bg">
+
+                        <div class="slider_bt_text">
+                            <asp:ContentPlaceHolder ID="cphSliderText" runat="server"></asp:ContentPlaceHolder>
+
+                        </div>
+
+                        <div class="slider_bt_video">
+                            <asp:ContentPlaceHolder ID="cphSliderVideo" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+                    <div class="clear"></div>
+
+
+                </div>--%>
+
+
+            <asp:ContentPlaceHolder ID="cphContent1" runat="server"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="cphContent2" runat="server"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="cphContent3" runat="server"></asp:ContentPlaceHolder>
+
+            <%--
+                    <div class="sliader"><asp:ContentPlaceHolder ID="cphSlider" runat="server"></asp:ContentPlaceHolder>  </div>
+                      <div class="content"><asp:ContentPlaceHolder ID="cphContent" runat="server"></asp:ContentPlaceHolder> </div>
+            --%>
+
+            <div class="footer-inner">
+
+
+                <asp:ContentPlaceHolder ID="cphfooter" runat="server"></asp:ContentPlaceHolder>
+                <%--
+                                <a href="/">
+                                                    <img src="/templateimages/logo.png" alt="logo" /></a>
+                --%>
+            </div>
+            <div class="copyright">
+                <div class="copyright_content">
+                    <span>© SEMYOU 2010 - 2017. All rights reserved.</span>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </form>
+
+
+    <%--  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    --%>
+
+   
+   
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('a[href="https://www.apps.semyou.com/registration/"]').attr('href', 'https://registration.semyouonline.com');
+            $('a[href="https://www.apps.semyou.com/registration"]').attr('href', 'https://registration.semyouonline.com');
+            $('a[href="https://apps.semyou.com/registration/"]').attr('href', 'https://registration.semyouonline.com');
+            $('a[href="https://registration.semyou.com/"]').attr('href', 'https://registration.semyouonline.com');
+            $('a[href="https://apps.semyou.com/apps"]').attr('href', 'https://store.semyouonline.com');
+            $('a[href="https://apps.semyou.com/apps/"]').attr('href', 'https://store.semyouonline.com');
+        });
+
+        $(window).load(function () {
+            $("body").click();
+        });
+
+        
+        $(document).ready(function () {
+
+            //$("#ui-id-2").click(function () {
+            //    $('.slick_slider_sec').slick({
+            //       dots: true,
+            //       fade: true,
+            //       speed: 900,
+            //       nextArrow: '<span href="#" class="next"><i class="fa fa-angle-right"></i></span>',
+            //        prevArrow: '<span href="#" class="previous"><i class="fa fa-angle-left"></i></span>',
+            //    });
+            //});
+            $("body").click(function () {
+                $('.slick_slider_sec').not('.slick-initialized').slick({
+                   dots: true,
+                   fade: true,
+                   speed: 900,
+                   nextArrow: '<span href="#" class="next"><i class="fa fa-angle-right"></i></span>',
+                    prevArrow: '<span href="#" class="previous"><i class="fa fa-angle-left"></i></span>',
+                });
+            });
+
+            $("#tabs ul li:nth-child(2) a").click(function() {
+                $('.slick_slider_sec').resize();
+                setTimeout(function(){
+                var lnth = $(".slick_slider_sec .slick-dots li").length;
+                var cust_width = lnth*936;
+                //$('.slick_slider_sec .slick-track').style('width', cust_width, 'important');
+                },200);
+            });
+
+
+
+
+            $(function () {
+                $("#tabs").tabs();
+            });
+            $('.list-outer').click(function () {
+                $('.categories-list ul').slideToggle("slow");
+                $('.icon-rotait').toggleClass("rotate");
+            });
+            
+            //$( "#category-tab" ).tabs();
+        });
+
+
+
+        // categories option  //							
+        
+
+        var cat = [
+           { name: "project-management", id: 1 },
+           { name: "idea-management", id: 2 },
+           { name: "employee-management", id: 3 },
+           { name: "tools", id: 4 },
+           { name: "task-management", id: 5 },
+           { name: "expense-management", id: 6 },
+           { name: "contract-management", id: 7 },
+           { name: "planning", id: 8 },
+           { name: "time-tracking", id: 9 },
+           { name: "information-management", id: 10 },
+           { name: "surveys-forms", id: 11 },
+           { name: "reporting", id: 12 }
+        ];
+
+        var apps = [
+            { name: "project-management" },
+            { name: "idea-management" },
+            { name: "employee-management" },
+            { name: "tools" },
+            { name: "task-management" },
+            { name: "expense-management" },
+            { name: "contract-management" },
+            { name: "time-tracking" },
+            { name: "planning" },
+            { name: "time-tracking" },
+            { name: "information-management" },
+            { name: "surveys-forms" },
+            { name: "reporting" }
+        ];
+
+        var map = [
+             { cat: "project-management", app: "project-management" },
+             { cat: "idea-management", app: "idea-management" },
+             { cat: "employee-management", app: "employee-management" },
+             { cat: "tools", app: "tools" },
+             { cat: "task-management", app: "task-management" },
+             { cat: "expense-management", app: "expense-management" },
+             { cat: "contract-management", app: "contract-management" },
+             { cat: "planning", app: "planning" },
+             { cat: "time-tracking", app: "time-tracking" },
+             { cat: "information-management", app: "information-management" },
+             { cat: "surveys-forms", app: "surveys-forms" },
+             { cat: "reporting", app: "reporting" }
+
+        ];
+
+
+
+
+        function myfunction(param) {
+
+            $(".app-categories-outer").hide()
+
+
+
+
+            var filteredNames = $(map).filter(function (idx) {
+                return map[idx].cat === param;
+            });
+
+            $(filteredNames).each(function () {
+                var filter = this;
+                $("div").each(function () {
+                    //alert(filter.app);
+                    //alert($(this).hasClass(this.app));
+                    if ($(this).hasClass(filter.app)) {
+                        //alert($(this).text());
+                        $(this).show();
+                    }
+                });
+                // $('#output').append(this.app);
+            });
+        }
+
+    </script>
+       <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+     <script type="text/javascript" src="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/js/jquery.countupcircle.min.js"></script>
+   <%-- <script type="text/javascript" src="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/js/tabs1.js"></script>
+  	<script type="text/javascript" src="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/js/tabs2.js"></script>--%>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.js"></script>
+</body>
+</html>

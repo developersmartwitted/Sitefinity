@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>semYOU Blog</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".expandlist li .sflistItemToggleLnk").parent().parent().css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/plus_arrows.png)  no-repeat 0px 0px");
+
+            $(".expandlist li .sflistItemToggleLnk").click(function () {
+
+                var toggleimg = ($(this).parent().parent().css("background"));
+
+                if (toggleimg.indexOf("plus_arrows.png") >= 0) {
+                    $(this).parent().parent().css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/minus_arrows.png)  no-repeat 0px 0px");
+
+                }
+                else
+                    $(this).parent().parent().css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/plus_arrows.png)  no-repeat 0px 0px");
+
+            });
+
+            $("a").click(function () {
+              
+                var toggleimg = $(this).text();
+                if (toggleimg == "Expand all") {
+                    $(".expandlist li").css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/minus_arrows.png)  no-repeat 0px 0px");
+
+                }
+                if (toggleimg == "Collapse all") {
+                    $(".expandlist li").css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/plus_arrows.png)  no-repeat 0px 0px");
+
+                }
+                $(".sflistItemContent ol li").css("background-image", "none");
+
+            });
+
+        });
+    </script>
+</head>
+<body class="blog-bg">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+  <div class="blog">
+<div class="wrapper_b">
+
+	<div class="header">
+	<div class="right_data_b">
+<asp:ContentPlaceHolder ID="cphNavigation" runat="server"></asp:ContentPlaceHolder>
+   <asp:ContentPlaceHolder ID="cphSearch" runat="server"></asp:ContentPlaceHolder>
+
+</div>
+    	<asp:ContentPlaceHolder ID="cph" runat="server"></asp:ContentPlaceHolder>
+   
+    </div>
+    
+    
+    
+    <div class="content_b">
+    	
+             <div class="w100 content_data">
+             
+            
+            <div class="insert">
+             
+            <div class="something_b dbopx mt30px">
+            	<asp:ContentPlaceHolder ID="cphBreadcrum" runat="server"></asp:ContentPlaceHolder>
+   
+                <div class="cal">
+               <asp:ContentPlaceHolder ID="cphBlogs" runat="server"></asp:ContentPlaceHolder>
+   
+                 </div>
+                <div class="clear"></div>
+                </div>
+              <div  class="right-blog">
+            <div class="press">
+            <asp:ContentPlaceHolder ID="cphPress" runat="server"></asp:ContentPlaceHolder>
+      </div>
+      
+            <div class="choose_categories">
+            	<asp:ContentPlaceHolder ID="cphCategory" runat="server"></asp:ContentPlaceHolder>
+   
+            </div>
+            <div class="archiv">
+           <asp:ContentPlaceHolder ID="cphArchive" runat="server"></asp:ContentPlaceHolder>
+   
+            </div>
+            <div class="apps_b">
+            	<h1>Discover all Apps<br /> FROM SEMYOU</h1>
+            	<asp:ContentPlaceHolder ID="cphApps" runat="server"></asp:ContentPlaceHolder>
+   
+            </div>
+            </div>
+            <div class="clear"></div>
+            </div>
+            
+                    
+        </div>
+        
+   
+        
+        
+        
+    </div>
+    
+    <div class="footer_b">
+         	<asp:ContentPlaceHolder ID="cphFooter" runat="server"></asp:ContentPlaceHolder>
+  
+    </div>
+    </div>
+  </div>
+
+    </form>
+</body>
+</html>

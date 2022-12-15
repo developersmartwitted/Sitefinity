@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" %>
+
+<%@ Register TagPrefix="sf" Namespace="Telerik.Sitefinity.Web.UI" Assembly="Telerik.Sitefinity" %>
+
+<!DOCTYPE HTML>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" id="ttop" class="js boxshadow fontface">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/images/new_images/favicon-1.ico" type="image/icon"/>
+
+     <script type="text/javascript">
+    window.history.replaceState && window.location.hash === '#_=_' && window.history.replaceState( '','', window.location.href.substr( 0, window.location.href.indexOf( '#' ) ) );
+    </script>
+
+    <title>Semyou Blog</title>
+   
+</head>
+<body class="home blog desktop group-blog">
+
+    <form id="form1" runat="server">
+
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+       <div id="page" class="hfeed site ">
+            <div class="site-header-wrap">
+                 <header id="masthead" class="site-header">
+                   <div class="site-branding">
+                    <h1 class="site-title">
+                      <asp:ContentPlaceHolder ID="cphtoplogo" runat="server"></asp:ContentPlaceHolder>
+                    </h1>
+                    </div>
+
+                      <asp:ContentPlaceHolder ID="cphtoplogo_text" runat="server"></asp:ContentPlaceHolder>
+                      <asp:ContentPlaceHolder ID="cphsiteutilitynavigation" runat="server"></asp:ContentPlaceHolder>
+
+                      <div class="mobile-search-icon-wrap">
+                      <a href="#" class="header-mobile-dropdown-toggle">search</a>
+                      </div>
+
+                     
+                <div class="header-mobile-dropdown">
+                </div>
+
+                 <div class="header-dropdown">
+                     <div class="search-container">
+                         <asp:ContentPlaceHolder ID="cphSearch" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+
+                     <nav id="site-navigation" class="main-navigation" role="navigation">
+                        <a class="skip-link screen-reader-text" href="#">Skip to content</a>
+                        <ul class="main-navigation-top-level">
+
+                            <li class="filter-parent">
+                                <a href="#">
+                                    <span class="fa fa-plus"></span>
+                                    What product do you use?
+                                </a>
+                                <asp:ContentPlaceHolder ID="cphnavigation" runat="server"></asp:ContentPlaceHolder>
+                            </li>
+                         </ul>
+                    </nav>
+
+                    
+
+                 
+                </div>
+
+                 </header>
+            
+            </div>
+            
+            <asp:ContentPlaceHolder ID="cphslideimages" runat="server"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="cphpagecontents" runat="server"></asp:ContentPlaceHolder>
+
+           <footer id="colophon" class="site-footer" role="contentinfo">
+
+            <div class="footer-widgets" >
+
+                <asp:ContentPlaceHolder ID="cphfooterwidgetcontent" runat="server"></asp:ContentPlaceHolder>
+                
+            </div>
+
+            
+
+            <div class="footer-logo">
+
+                <asp:ContentPlaceHolder ID="cphfooterlogo" runat="server"></asp:ContentPlaceHolder>
+
+            </div>
+
+            <div class="menu-footer-menu-container">
+                
+                <asp:ContentPlaceHolder ID="cphfootermenu" runat="server"></asp:ContentPlaceHolder>
+
+            </div>
+            <!-- .footer-logo -->
+        </footer>
+        </div>
+
+        <script type="text/javascript">
+			jQuery(document).ready(function($){
+				var openModal = function( standard ) {
+					tb_show( '','#TB_inline?width=900&amp;inlineId=login-modal','' );
+
+					if ( true === standard ) {
+						$('#TB_window').addClass('standard-login login-popup');
+						$('.office-login-errors').addClass( 'visually-hidden' );
+						$('.office-login-welcome').removeClass( 'visually-hidden' );
+					} else {
+						$('#TB_window').addClass('login-popup-has-errors login-popup');
+						$('.office-login-errors').removeClass( 'visually-hidden' );
+						$('.office-login-welcome').addClass( 'visually-hidden' );
+						$('.login-popup').height( $( '#wp-social-login-connect-options' ).height() );
+					}
+
+					$('.login-popup').css({
+						'width': '100%',
+						'left': 0,
+						'margin-left':0 
+					}).css( 'margin-top', '' );
+					$('#TB_ajaxContent').css({
+						'margin': '0 auto',
+						'max-width': '100%'
+					});
+				};
+
+				$('body').on('click', '[href=""], [href=""]',
+                    function (evt)
+                    {
+					evt.preventDefault();
+					openModal( true );
+				});
+							});
+    </script>
+
+    </form>
+</body>
+</html>

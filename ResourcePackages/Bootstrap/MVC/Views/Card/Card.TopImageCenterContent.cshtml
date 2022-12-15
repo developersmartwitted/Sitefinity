@@ -1,0 +1,20 @@
+@model Telerik.Sitefinity.Frontend.Card.Mvc.Models.Card.CardViewModel
+
+<div class="@Model.CssClass">
+     
+            <img src="@Model.SelectedSizeUrl" title="@Model.ImageTitle" alt="@Model.ImageAlternativeText">
+         
+        
+            <h2>
+                @Html.Raw(Model.Heading)
+            </h2>
+            <p>@Html.Raw(Model.Description)</p>
+
+            @if (!string.IsNullOrEmpty(Model.ActionName))
+            {
+                <a href="@Model.ActionUrl">@Model.ActionName</a>
+            }
+         
+   
+    
+</div>

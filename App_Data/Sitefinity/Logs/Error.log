@@ -1,0 +1,151 @@
+----------------------------------------
+ActivityId: b0be843c-6484-4b3a-8d5d-f043b0849cb1
+
+Timestamp: 1/12/2021 5:04:32 PM
+
+Message: IdentityServer signing certificate is not configured. System will be using default IdentityServer certificate
+
+Category: ErrorLog
+
+Priority: -1
+
+EventId: 1
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-JTTJE4J
+
+App Domain: /LM/W3SVC/2/ROOT-1-132549445570350368
+
+ProcessId: 20024
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:13136
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+ActivityId: 00000000-0000-0000-0000-000000000000
+
+Timestamp: 1/12/2021 5:06:50 PM
+
+Message: HandlingInstanceID: 65a104bb-1447-4d0c-8b60-6d4b167d216d
+An exception of type 'System.Exception' occurred and was caught.
+----------------------------------------------------------------
+01/12/2021 22:36:50
+Type : System.Exception, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Message : The configuration 'AuthenticationConfig' is not registered
+Source : Telerik.Sitefinity
+Help link : 
+Data : System.Collections.ListDictionaryInternal
+TargetSite : Void VerifySectionRegistered(System.Type, System.String)
+HResult : -2146233088
+Stack Trace :    at Telerik.Sitefinity.Configuration.Config.VerifySectionRegistered(Type sectionType, String sectionName)
+   at Telerik.Sitefinity.Configuration.Config.GetSectionInternal(Type sectionType, Boolean safeMode, String sectionName)
+   at Telerik.Sitefinity.Configuration.Config.GetSectionPrivate(Type sectionType, Boolean safeMode, String sectionName)
+   at Telerik.Sitefinity.Configuration.Config.GetSectionPrivate[TSection](Boolean safeMode)
+   at Telerik.Sitefinity.Authentication.IdentityServer.Data.TransientDataCleanupTask.NewInstance()
+   at Telerik.Sitefinity.Services.SystemManager.<>c.<RegisterRegisterScheduledTasks>b__112_1(Object[] p)
+
+Additional Info:
+
+MachineName : DESKTOP-JTTJE4J
+TimeStamp : 1/12/2021 5:06:50 PM
+FullName : Telerik.Sitefinity.Utilities, Version=13.2.7500.0, Culture=neutral, PublicKeyToken=b28c218413bdf563
+AppDomainName : /LM/W3SVC/2/ROOT-1-132549445570350368
+ThreadIdentity : system
+WindowsIdentity : DESKTOP-JTTJE4J\HP
+Requested URL : http://localhost:60876/
+
+
+Category: ErrorLog
+
+Priority: 0
+
+EventId: 9010
+
+Severity: Warning
+
+Title:Enterprise Library Exception Handling
+
+Machine: DESKTOP-JTTJE4J
+
+App Domain: /LM/W3SVC/2/ROOT-1-132549445570350368
+
+ProcessId: 20024
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:13136
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+ActivityId: a9982d55-ec92-475c-bd02-7076e5be2b3b
+
+Timestamp: 1/13/2021 2:29:41 AM
+
+Message: IdentityServer signing certificate is not configured. System will be using default IdentityServer certificate
+
+Category: ErrorLog
+
+Priority: -1
+
+EventId: 1
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-LV0TFGI
+
+App Domain: /LM/W3SVC/2/ROOT-1-132549784476426744
+
+ProcessId: 6592
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:17644
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+ActivityId: 1ea45eee-c074-4cd5-994c-029508df1ed4
+
+Timestamp: 1/13/2021 3:53:05 AM
+
+Message: IdentityServer signing certificate is not configured. System will be using default IdentityServer certificate
+
+Category: ErrorLog
+
+Priority: -1
+
+EventId: 1
+
+Severity: Information
+
+Title:
+
+Machine: DESKTOP-LV0TFGI
+
+App Domain: /LM/W3SVC/2/ROOT-1-132549834485740209
+
+ProcessId: 16800
+
+Process Name: C:\Program Files (x86)\IIS Express\iisexpress.exe
+
+Thread Name: 
+
+Win32 ThreadId:5804
+
+Extended Properties: 
+----------------------------------------

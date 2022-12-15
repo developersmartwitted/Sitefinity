@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-arrow-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<path id="circle" fill="#FFFFFF" d="M25,45.1c11.1,0,20.1-9,20.1-20.1c0-11.1-9-20.1-20.1-20.1c-11.1,0-20.1,9-20.1,20.1
+	C4.9,36.1,13.9,45.1,25,45.1 M25,48C12.3,48,2,37.7,2,25C2,12.3,12.3,2,25,2c12.7,0,23,10.3,23,23C48,37.7,37.7,48,25,48"/>
+<polygon id="arrow" fill="#FFFFFF" points="29.2,27.2 22.1,33.9 27.9,33.9 37.3,25 27.9,16.1 22.2,16.1 29.2,22.7 13.3,22.7 
+	13.3,27.2 "/>
+</svg>

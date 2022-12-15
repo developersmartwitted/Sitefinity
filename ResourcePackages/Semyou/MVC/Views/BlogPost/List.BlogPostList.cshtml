@@ -1,0 +1,89 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+
+@using Telerik.Sitefinity;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Web.DataResolving;
+
+@Html.Script(ScriptRef.JQuery, "top", false)
+
+<div class="@Model.CssClass">
+  
+
+        @foreach (var item in Model.Items)
+        {
+
+
+            var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+           
+
+    <div class="post-wrap col-4">
+        <article class="post-227640 post type-post" id="post-227640">
+            <a name="@item.Fields.Title" title="@item.Fields.Title" class="post-block-link" href="@navigateUrl" rel="bookmark"></a>
+            <header class="entry-header">
+                <div class="entry-upper-head">
+                    <div class="entry-header-term">
+                       
+                        <a  name="@item.Fields.Title" title="@item.Fields.Title"
+                            @Html.InlineEditingFieldAttributes("Title", "ShortText" ) > @item.Fields.Title
+                       </a>
+                    </div>
+                    
+
+                    @*//---------Used here social share feature----//*@
+
+                    <div class="archive-thumbnail">
+                        <a href="#">
+
+
+
+                        </a>
+                    </div>
+                    <h3 class="entry-title">
+                        <a href="#" rel="bookmark">
+                            @item.Fields.Summary
+                        </a>
+                    </h3>
+                </div>
+                <div class="entry-meta">
+                    <div class="when-who">
+                        <span class="byline">by <span class="author vcard"><a class="url fn n" href="#">@DataResolver.Resolve(item.DataItem, "Author", null)
+                            </a></span></span>, 
+                    
+                    <span class="posted-on">
+
+                               on
+                                                                                                                                                       
+                                         <time class="entry-date published" datetime="2017-06-20T07:55:24+00:00">
+                                @item.GetDateTime("PublicationDate", "MMM d, yyyy, HH:mm tt")
+                                        </time>
+                           
+
+                        </span>
+                    </div><span class="comments-sep v-sep">|</span> <a class="num-comments" href="#">@Html.CommentsCount((string)navigateUrl, item.DataItem) Comments</a>
+                </div>
+                <div class="entry-summary">
+                    <a href="#"><p></p></a>
+                </div><!-- .entry-summary -->
+
+                <footer class="entry-meta"></footer><!-- .entry-meta -->
+            </header>
+
+
+        </article>
+    </div>
+            
+        }
+   
+    @if (Model.ShowPager)
+    {
+        @Html.Action("Index", "ContentPager", new
+           {
+               currentPage = Model.CurrentPage,
+               totalPagesCount = Model.TotalPagesCount.Value,
+               redirectUrlTemplate = ViewBag.RedirectPageUrlTemplate
+           })
+    }
+</div>
+
+

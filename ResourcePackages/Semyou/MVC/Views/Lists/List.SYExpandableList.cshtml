@@ -1,0 +1,64 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Frontend.Lists.Mvc.Models;
+@Html.Script(ScriptRef.JQuery)
+
+<section class="pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="title-lg">Office frequently asked questions</h2>
+                <h3 class="title mt-5 mb-5">Find answers to commonly asked questions about SEMYOU</h3>
+                <h3 class="title-medium mt-5 mb-5">Top questions</h3>
+                <div id="accordion" class="accordion faq-accordion">
+                    <div class="card border-0 mb-0">
+                        
+
+                        @foreach (var item in Model.Items)
+            {
+
+                            @*<h3 @Html.InlineEditingAttributes(Model.ProviderName, Model.ContentType.FullName, (Guid)item.Fields.Id) @Html.InlineEditingFieldAttributes("Title", "ShortText")>
+                                @item.Fields.Title
+                            </h3>*@
+
+                        int i = 0;
+                        foreach (var listItem in ((ListViewModel)item).ListItemViewModel.Items)
+                        {
+                                <div @Html.InlineEditingAttributes(Model.ProviderName, ((ListViewModel)item).ListItemViewModel.ContentType.FullName, (Guid)listItem.Fields.Id)>
+                                    <div @Html.InlineEditingFieldAttributes("Title", "ShortText") class="card-header collapsed" data-toggle="collapse" href="#faq@(i)">
+                                        <a class="card-title">
+                                            @*What’s the difference between Office 365 subscription plans and Office as a one-time purchase?*@
+                                            @listItem.Fields.Title
+                                        </a>
+                                    </div>
+                                    @*<a href="javascript:void(0)" @Html.InlineEditingFieldAttributes("Title", "ShortText") data-sf-role="toggleLink"><i class="text-muted sf-icon glyphicon glyphicon-chevron-right"></i>@listItem.Fields.Title</a>*@
+
+                                    <div @Html.InlineEditingFieldAttributes("Content", "LongText") id="faq@(i++)" class="card-body collapse" data-parent="#accordion">
+                                        
+                                        @*<p>
+                                                What’s the difference between Office 365 subscription plans and Office as Yes. You can sign up to try Office 365 Home for free for a month on
+                                            </p>
+                                            <p>a one-time purchase? What’s the difference between Office 365 subscription plans and Office as Yes. You can sign up to try Office 365 Home for free for a month on a one-time purchase? What’s the difference between Office 365 subscription plans and Office as Yes. You can sign up to try Office 365 Home for free for a month on a one-time purchase? </p>*@
+
+                                        <p>
+                                            @Html.HtmlSanitize((string)listItem.Fields.Content)
+
+                                        </p>
+                                    </div>
+                                    @*<div @Html.InlineEditingFieldAttributes("Content", "LongText") style="display:none;" class="sf-list-content">
+                                            @Html.HtmlSanitize((string)listItem.Fields.Content)
+                                        </div>*@
+
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

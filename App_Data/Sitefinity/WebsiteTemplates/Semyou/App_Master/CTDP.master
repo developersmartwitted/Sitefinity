@@ -1,0 +1,244 @@
+﻿<%@ Master Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/><title>FamilyGuide</title>
+
+<script src="js/jquery.js" type="text/javascript"></script>
+
+	
+    <link rel="stylesheet" type="text/css" href="/shadowbox/shadowbox.css">
+<script type="text/javascript" src="/shadowbox/shadowbox.js"></script>
+<script type="text/javascript">
+    Shadowbox.init();
+</script>
+</head>
+<body >
+	<form id="form1" runat="server">
+		<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+<div class="centerdiv">
+	<div class="header">
+    	<div class="top_header">
+    		<div class="left_logo">
+        		<a href="#"><img src="root_images/logo.png" alt="" /></a>
+        	</div>
+        	<div class="heading_bnr">
+        		<img src="root_images/heading.png" alt="" />
+        	</div>
+        	<div class="right_logo">
+        		<img src="root_images/right_logo.png" />
+        	</div>
+        </div>
+        
+        <div class="container">
+	
+<a class="toggleMenu" href="#">Menu</a>
+        <asp:contentplaceholder id="cphMenu" runat="server" ></asp:contentplaceholder>
+<%--
+<ul class="nav">
+	<li  class="test">
+		<a href="#">Teams</a>
+		<ul>
+			<li>
+				<a href="#">Womens</a>
+			</li>
+			<li>
+				<a href="#">Mens</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="#">Families</a>
+		<ul>
+			<li>
+				<a href="#">Mens</a>
+                <ul>
+			<li>
+				<a href="#">Mens</a>
+			</li>
+			<li>
+				<a href="#">Womens</a>
+			</li>
+		</ul>
+			</li>
+			<li>
+				<a href="#">Womens</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="#">Pants</a>
+		
+	</li>
+	<li>
+		<a href="#">Tournaments</a>
+		
+	</li>
+	<li>
+		<a href="#">Register</a>
+		<ul>
+			<li>
+				<a href="#">Casual</a>
+			</li>
+			<li>
+				<a href="#">Formal</a>
+			</li>
+			
+		</ul>
+	</li>
+	<li>
+		<a href="#">Contact</a>
+		
+	</li>
+	<li>
+		<a href="#">About</a>
+		
+	</li>
+</ul>--%>
+</div>
+    </div>
+    <div class="cointaint">
+    	 <div class="benner">
+         <asp:contentplaceholder id="cphBanner" runat="server" ></asp:contentplaceholder>
+        	<%--<img src="root_images/benner.jpg" alt="" />--%>
+        </div>
+   		 <div class="row1">
+    	<ul>
+        	<li>
+            	<div class="data">
+                	<div class="head">
+                    	<img src="root_images/img1.jpg" alt="" />
+                        <h2>Teams</h2>
+                    </div>
+                    <div class="text">
+<%--                    <p><asp:contentplaceholder id="Contentplaceholder1" runat="server" >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</asp:contentplaceholder></p>
+--%>
+                    	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                    </div>
+                </div>
+                <div class="btn">
+                	<a href="/teams">ENTER</a>
+                </div>
+            </li>
+            <li>
+            	<div class="data">
+                	<div class="head">
+                    	<img src="root_images/img2.jpg" alt="" />
+                        <h2>Families</h2>
+                    </div>
+                    <div class="text">
+                    	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                    </div>
+                </div>
+                <div class="btn">
+                	<a href="/families">ENTER</a>
+                </div>
+            </li>
+            <li>
+            	<div class="data">
+                	<div class="head">
+                    	<img src="root_images/img3.jpg" alt="" />
+                        <h2>Tournaments</h2>
+                    </div>
+                    <div class="text">
+                    	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                    </div>
+                </div>
+                <div class="btn">
+                	<a href="/tournaments">ENTER</a>
+                </div>
+            </li>
+            <li>
+            	<div class="data">
+                	<div class="head">
+                    	<img src="root_images/img4.jpg" alt="" />
+                        <h2>Our history</h2>
+                    </div>
+                    <div class="text">
+                    	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                    </div>
+                </div>
+                <div class="btn">
+                	<a href="/our-history">ENTER</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    	 <div class="row2">
+    	<div class="clmb1">
+        	<div class="heading">
+            	<h1>QUICK LINKS</h1>
+                <img src="root_images/hand_icon.png" />
+            </div>
+        	<ul class="list">
+            	<li><a href="#">> Tournament Results</a></li>
+                <li><a href="#">> Team Roster Entry</a></li>
+                <li><a href="#">> 2012 Home</a></li>
+                <li><a href="#">> AYBHOF</a></li>
+                <li><a href="#">> Records</a></li>
+                <li><a href="#">> Directions</a></li>
+                <li><a href="#">> cdptv.com</a></li>
+                <li><a href="#">> dreamsparkphotos.com</a></li>
+                <li><a href="#">> cooperstownpins.com</a></li>
+            </ul>
+            <div class="more_btn">
+            	<a href="#">MORE LINKS</a>
+            </div>
+        </div>
+        <div class="clmb2">
+        	<div class="heading">
+            	<h1>DREAMS PARK NEWS</h1>
+                <img src="root_images/news_icon.png" />
+            </div>
+<%--        	<ul class="calander">
+            	<li>
+                	<img src="root_images/calender.jpg" />
+                    <p>Weekly Highlights & Champion Game
+                    DVDs are on sale NOW!  Get your
+                    game to watch over & over & over. The
+                    best way to get them are by logging
+                    on to the website and creating your
+                    account....READ MORE ></p>
+                </li>
+                <li>
+                	<img src="root_images/calender.jpg" />
+                    <p>Tournament Registration for 2014
+					begins in 2 weeks!!.......READ MORE></p>
+                </li>
+            </ul>
+--%>   
+<asp:ContentPlaceHolder ID="cphNews" runat="server"></asp:ContentPlaceHolder>
+         <div class="more_btn">
+            	<a href="/news">ALL NEWS</a>
+            </div>
+        </div>
+        <div class="clmb3">
+        	<div class="heading">
+            	<h1>LATEST VIDEOS</h1>
+                <img src="root_images/midia_icon.png" />
+            </div>
+        	<ul class="list">
+            	<li><img src="root_images/play_game.jpg" /></li>
+            </ul>
+            <div class="more_btn">
+            	<a href="#">MORE LINKS</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+    	<p>2013 Cooperstown Dreams Park.  All Rights Reserved.</p>
+    </div>
+</div>
+<script src="js/script.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('a[href="https://www.apps.semyou.com/registration"]').attr('href', 'https://apps.semyou.com/registration/');
+                $('a[href="https://registration.semyou.com"]').attr('href', 'https://apps.semyou.com/registration/');
+            });
+
+        </script>
+	</form>
+</body>
+</html>

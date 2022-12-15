@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FamilyGuide</title>
+        <link rel="icon" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/images/new_images/favicon-1.ico" type="image/icon"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".expandlist li .sflistItemToggleLnk").parent().parent().css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/plus_arrows.png)  no-repeat 0px 0px");
+
+            $(".expandlist li .sflistItemToggleLnk").click(function () {
+
+                var toggleimg = ($(this).parent().parent().css("background"));
+
+                if (toggleimg.indexOf("plus_arrows.png") >= 0) {
+                    $(this).parent().parent().css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/minus_arrows.png)  no-repeat 0px 0px");
+
+                }
+                else
+                    $(this).parent().parent().css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/plus_arrows.png)  no-repeat 0px 0px");
+
+            });
+
+            $("a").click(function () {
+
+                var toggleimg = $(this).text();
+                if (toggleimg == "Expand all") {
+                    $(".expandlist li").css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/minus_arrows.png)  no-repeat 0px 0px");
+
+                }
+                if (toggleimg == "Collapse all") {
+                    $(".expandlist li").css("background", "url(/Sitefinity/WebsiteTemplates/Semyou/App_Themes/Semyou/global/images/plus_arrows.png)  no-repeat 0px 0px");
+
+                }
+                $(".sflistItemContent ol li").css("background-image", "none");
+
+            });
+
+        });
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div class="wrapper">
+            <div class="header">
+                <div class="right_data">
+                    <asp:ContentPlaceHolder ID="cph_right_data" runat="server"></asp:ContentPlaceHolder>
+                    <%--<a href="/"><img src="/templateimages/logo.png" alt="logo" /></a>--%>
+                </div>
+                <div class="clear">
+                </div>
+                <div class="logo">
+                    <asp:ContentPlaceHolder ID="cphLogo" runat="server"></asp:ContentPlaceHolder>
+                    <%--
+                            <a href="/">
+                                                <img src="/templateimages/logo.png" alt="logo" /></a>
+                    --%>
+                </div>
+                <div class="menu">
+                    <asp:ContentPlaceHolder ID="cphMenu" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <%--
+                            <ul>
+                                             <li><a class="active" href="#">Home</a></li>
+                                             <li><a href="#">Benefits</a></li>
+                                             <li><a href="#">Tour</a></li>
+                                             <li><a href="#">Cloud Solution</a></li>
+                                             <li><a href="#">Cloud products</a></li>
+                                             <li><a href="#">Service</a></li>
+                                             <li><a href="#">Partner</a></li>
+                                             <li><a href="#">Support</a></li>
+                                             <li><a href="#">About</a></li>
+                                         </ul>
+                    --%>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="sliader">
+                <asp:ContentPlaceHolder ID="cphSlider" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="content">
+                <%--<div class="w100 content_data">--%>
+                <div class="w100 content_data tour_data">
+                    <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="footer footer-new">
+                <div class="footer-inner">
+                    <asp:ContentPlaceHolder ID="cphfooter" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div class="copyright">
+                    <div class="copyright_content">
+                        <span>© SEMYOU 2010 - 2017. All rights reserved.</span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('a[href="https://www.apps.semyou.com/registration/"]').attr('href', 'https://registration.semyouonline.com');
+                $('a[href="https://www.apps.semyou.com/registration"]').attr('href', 'https://registration.semyouonline.com');
+                $('a[href="https://apps.semyou.com/registration/"]').attr('href', 'https://registration.semyouonline.com');
+                $('a[href="https://registration.semyou.com/"]').attr('href', 'https://registration.semyouonline.com');
+                $('a[href="https://apps.semyou.com/apps"]').attr('href', 'https://store.semyouonline.com');
+                $('a[href="https://apps.semyou.com/apps/"]').attr('href', 'https://store.semyouonline.com');
+            });
+
+        </script>
+    </form>
+</body>
+</html>

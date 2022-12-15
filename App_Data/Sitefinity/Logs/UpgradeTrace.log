@@ -1,0 +1,1948 @@
+----------------------------------------
+Timestamp: 11-01-2021 17:29:26
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 11-01-2021 17:29:26
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 11-01-2021 17:29:26
+
+Message: Modifying a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 11-01-2021 17:29:30
+
+Message: -- Column was read from database as: [description_] varchar(255) null
+-- modify column for field description
+ALTER TABLE [sf_meta_fields] ALTER COLUMN [description_] NVARCHAR(MAX) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 11-01-2021 17:29:30
+
+Message: -- add column for field recommendedCharactersCount
+ALTER TABLE [sf_meta_fields] ADD [recommended_characters_count] int NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 11-01-2021 17:29:30
+
+Message: -- add column for field isLocalizable
+ALTER TABLE [sf_meta_fields] ADD [is_localizable] tinyint NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:10:15
+
+Message: Upgrading Progress Sitefinity CMS from build version 6701 to 7500.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:21:29
+
+Message: Upgrading Progress Sitefinity CMS from build version 6701 to 7500.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:32:16
+
+Message: Upgrading Progress Sitefinity CMS from build version 6701 to 7500.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:36:24
+
+Message: Upgrading Progress Sitefinity CMS from build version 6701 to 7500.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:39:40
+
+Message: Upgrading Progress Sitefinity CMS from build version 6701 to 7500.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:39:56
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:39:56
+
+Message: Removing a column(s) from an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:00
+
+Message: -- dropping unknown column [voa_version]
+ALTER TABLE [sf_taxonomies] DROP COLUMN [voa_version]
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:13
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:13
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:13
+
+Message: Adding an index(indices) to an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:13
+
+Message: Modifying a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- add column for field PageDraft.templateName
+ALTER TABLE [sf_draft_pages] ADD [template_name] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- add column for field PageDraft.renderer
+ALTER TABLE [sf_draft_pages] ADD [renderer] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- add column for field parentId
+ALTER TABLE [sf_object_data] ADD [parent_id] uniqueidentifier NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- add column for field multilingualVersion
+ALTER TABLE [sf_object_data] ADD [multilingual_version] NVARCHAR(MAX) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- Column was read from database as: [place_holder] varchar(50) null
+-- modify column for field ControlData.placeHolder
+ALTER TABLE [sf_object_data] ALTER COLUMN [place_holder] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- add column for field templateName
+ALTER TABLE [sf_page_data] ADD [template_name] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- add column for field renderer
+ALTER TABLE [sf_page_data] ADD [renderer] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:18
+
+Message: -- Index 'idx_sf_pg_node_prnt_id_ordnl' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_pg_node_prnt_id_ordnl] ON [sf_page_node]([parent_id], [ordinal])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:31
+
+Message: Db Migration Complexity: Extending
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:31
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:31
+
+Message: Adding a foreign key constraint(s) to a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:31
+
+Message: Adding an index(indices) definition for a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:31
+
+Message: Adding a new table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: -- add column for field dateCreated
+ALTER TABLE [sf_version_chnges] ADD [date_created] datetime NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: -- add column for field additionalInfo
+ALTER TABLE [sf_version_chnges] ADD [add_info] nvarchar(max) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: -- Telerik.Sitefinity.Versioning.Model.Dependency
+CREATE TABLE [sf_version_dependency] (
+    [key] varchar(255) NOT NULL,            -- key
+    [id] uniqueidentifier NOT NULL,         -- id
+    [data] nvarchar(max) NOT NULL,          -- data
+    [clean_up_task_type] varchar(255) NOT NULL, -- cleanUpTaskType
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_version_dependency] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: -- System.Collections.Generic.IList`1[[Telerik.Sitefinity.Versioning.Model.Dependency, Telerik.Sitefinity.Model, Version=13.2.7500.0, Culture=neutral, PublicKeyToken=b28c218413bdf563]] Telerik.Sitefinity.Versioning.Model.Change.dependencies
+CREATE TABLE [sf_vrsn_chngs_sf_vrsn_dpndncy] (
+    [id] uniqueidentifier NOT NULL,
+    [id2] uniqueidentifier NOT NULL,
+    CONSTRAINT [pk_sf_vrsn_chngs_sf_v_4950C6B0] PRIMARY KEY ([id], [id2])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: ALTER TABLE [sf_vrsn_chngs_sf_vrsn_dpndncy] ADD CONSTRAINT [ref_sf_vrsn_chngs_sf__1BD4FD1B] FOREIGN KEY ([id]) REFERENCES [sf_version_chnges]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: ALTER TABLE [sf_vrsn_chngs_sf_vrsn_dpndncy] ADD CONSTRAINT [ref_sf_vrsn_chngs_sf__08F3435E] FOREIGN KEY ([id2]) REFERENCES [sf_version_dependency]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: -- Index 'sf_idx_vrsn_dpndncy' was not detected in the database. It will be created
+CREATE UNIQUE INDEX [sf_idx_vrsn_dpndncy] ON [sf_version_dependency]([key], [clean_up_task_type])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:36
+
+Message: -- Index 'idx_sf_vrsn_chngs_sf_vrsn_dpnd' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_vrsn_chngs_sf_vrsn_dpnd] ON [sf_vrsn_chngs_sf_vrsn_dpndncy]([id2])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:40
+
+Message: PASSED : SiteInitializer : Upgrade to 6800 (Removing IE 10 meta tag.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:41
+
+Message: PASSED : SiteInitializer : Upgrade to 6800 (Clearing PersonalizationMasterId and PersonalizationSegmentId from draft pages of original variations.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:41
+
+Message: PASSED : SiteInitializer : Upgrade to 7000 (Creating a notifications profile from the original SMTP (Email Settings).)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:41
+
+Message: PASSED : SiteInitializer : Upgrade to 7000 (Resetting the available page template frameworks.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:41
+
+Message: PASSED : SiteInitializer : Upgrade to 7000 (Resetting enabling of Inline Editing.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:42
+
+Message: PASSED : SiteInitializer : Upgrade to 7000 (Rename Basic template catory taxon.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:42
+
+Message: PASSED : SiteInitializer : Upgrade to 7100 (Upgrades legacy multiple choice fields for static types and pages.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:58
+
+Message: PASSED : SiteInitializer : Upgrade to 7200 (Upgrades legacy resizing images functionality.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:58
+
+Message: PASSED : SiteInitializer : Upgrade to 7200 (Configuring Custom Error Pages)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:58
+
+Message: PASSED : SiteInitializer : Upgrade to 7200 (Configuring comments date time settings)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:40:58
+
+Message: PASSED : SiteInitializer : Upgrade to 7400 (To assure that DBType in custom fields SEO Description and OpenGraph Description is correctly assigned)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:02
+
+Message: PASSED : SiteInitializer : Upgrade to 7426 (All Lstring properties of backend pages and templates that do not use resource strings, must use only the system default language to persist data.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:11
+
+Message: Db Migration Complexity: Extending
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:11
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:15
+
+Message: -- add column for field concurrentTasksKey
+ALTER TABLE [sf_scheduled_tasks] ADD [concurrent_tasks_key] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:55
+
+Message: Db Migration Complexity: Extending
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:55
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:55
+
+Message: Adding an index(indices) to an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:59
+
+Message: -- add column for field externalId
+ALTER TABLE [sf_users] ADD [ext_id] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:44:59
+
+Message: -- Index 'sf_users_external' was not detected in the database. It will be created
+CREATE INDEX [sf_users_external] ON [sf_users]([ext_provider_name], [ext_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:18
+
+Message: Db Migration Complexity: Trivial
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:18
+
+Message: Adding a foreign key constraint(s) to a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:18
+
+Message: Adding an index(indices) definition for a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:18
+
+Message: Adding a new table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Telerik.Sitefinity.Workflow.Model.WorkflowDefinition
+CREATE TABLE [sf_wfl_definition] (
+    [workflow_type] int NOT NULL,           -- workflowType
+    [title_] NVARCHAR(255) NULL,            -- title
+    [ownr] uniqueidentifier NULL,           -- owner
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [is_active] tinyint NOT NULL,           -- isActive
+    [inherits_permissions] tinyint NOT NULL, -- inheritsPermissions
+    [id] uniqueidentifier NOT NULL,         -- id
+    [date_created] datetime NOT NULL,       -- dateCreated
+    [custom_xamlx_url] NVARCHAR(255) NULL,  -- customXamlxUrl
+    [can_inherit_permissions] tinyint NOT NULL, -- canInheritPermissions
+    [application_name] varchar(255) NULL,   -- applicationName
+    [allw_pblshers_to_skip_workflow] tinyint NOT NULL, -- allowPublishersToSkipWorkflow
+    [allow_notes] tinyint NULL,             -- allowNotes
+    [allw_dmnstrtrs_t_skip_workflow] tinyint NOT NULL, -- allowAdministratorsToSkipWorkflow
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_wfl_definition] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Telerik.Sitefinity.Model.ProviderTrackedList`1[[Telerik.Sitefinity.Security.Model.Permission, Telerik.Sitefinity.Model, Version=13.2.7500.0, Culture=neutral, PublicKeyToken=b28c218413bdf563]] Telerik.Sitefinity.Workflow.Model.WorkflowDefinition.permissions
+CREATE TABLE [sf_wfl_dfnition_sf_permissions] (
+    [id] uniqueidentifier NOT NULL,
+    [id2] uniqueidentifier NOT NULL,
+    CONSTRAINT [pk_sf_wfl_dfntn_sf_pr_9B8007B6] PRIMARY KEY ([id], [id2])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- System.Collections.Generic.IDictionary`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Telerik.Sitefinity.Workflow.Model.WorkflowDefinition.permissionsetObjectTitleResKeys
+CREATE TABLE [sf_wfl_dfntn_prmssnst_bjct_ttl] (
+    [id] uniqueidentifier NOT NULL,
+    [mapkey] varchar(255) NOT NULL,         -- <key>
+    [val] varchar(255) NULL,                -- <value>
+    CONSTRAINT [pk_sf_wfl_dfntn_prmss_8F92C9AA] PRIMARY KEY ([id], [mapkey])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- System.String[] Telerik.Sitefinity.Workflow.Model.WorkflowDefinition.supportedPermissionSets
+CREATE TABLE [sf_wfl_dfntn_spprtd_prmssn_sts] (
+    [id] uniqueidentifier NOT NULL,
+    [seq] int NOT NULL,                     -- <sequence>
+    [val] varchar(255) NULL,                -- <value>
+    CONSTRAINT [pk_sf_wfl_dfntn_spprt_95FBD0A6] PRIMARY KEY ([id], [seq])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Telerik.Sitefinity.Workflow.Model.WorkflowLevel
+CREATE TABLE [sf_wfl_level] (
+    [ordinal] real NOT NULL,                -- ordinal
+    [notify_approvers] tinyint NOT NULL,    -- notifyApprovers
+    [notify_administrators] tinyint NOT NULL, -- notifyAdministrators
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [id] uniqueidentifier NOT NULL,         -- id
+    [workflow_definition_id] uniqueidentifier NULL, -- definition
+    [app_name] varchar(255) NULL,           -- appName
+    [action_name] NVARCHAR(255) NULL,       -- actionName
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_wfl_level] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- System.Collections.Generic.IList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Telerik.Sitefinity.Workflow.Model.WorkflowLevel.customEmailRecipients
+CREATE TABLE [sf_wfl_lvl_cstm_mil_recipients] (
+    [id] uniqueidentifier NOT NULL,
+    [seq] int NOT NULL,                     -- <sequence>
+    [val] nvarchar(255) NULL,               -- <value>
+    CONSTRAINT [pk_sf_wfl_lvl_cstm_ml_F5742FEA] PRIMARY KEY ([id], [seq])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Telerik.Sitefinity.Workflow.Model.WorkflowPermission
+CREATE TABLE [sf_wfl_permission] (
+    [principal_type] int NOT NULL,          -- principalType
+    [principal_name] NVARCHAR(255) NULL,    -- principalName
+    [principal_id] varchar(255) NULL,       -- principalId
+    [workflow_level_id] uniqueidentifier NULL, -- level
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [id] uniqueidentifier NOT NULL,         -- id
+    [app_name] varchar(255) NULL,           -- appName
+    [action_name] NVARCHAR(255) NULL,       -- actionName
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_wfl_permission] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Telerik.Sitefinity.Workflow.Model.WorkflowScope
+CREATE TABLE [sf_wfl_scope] (
+    [provider_name] NVARCHAR(100) NULL,     -- providerName
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [lnguage] VARCHAR(20) NULL,             -- language
+    [id] uniqueidentifier NOT NULL,         -- id
+    [workflow_definition_id] uniqueidentifier NULL, -- definition
+    [app_name] varchar(255) NULL,           -- appName
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_wfl_scope] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Telerik.Sitefinity.Workflow.Model.WorkflowTypeScope
+CREATE TABLE [sf_wfl_type_scope] (
+    [scope_id] uniqueidentifier NULL,       -- workflowScope
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [include_children] tinyint NULL,        -- includeChildren
+    [id] uniqueidentifier NOT NULL,         -- id
+    [content_type] varchar(255) NULL,       -- contentType
+    [content_filter] NVARCHAR(MAX) NULL,    -- contentFilter
+    [app_name] varchar(255) NULL,           -- appName
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_wfl_type_scope] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: ALTER TABLE [sf_wfl_dfnition_sf_permissions] ADD CONSTRAINT [ref_sf_wfl_dfntn_sf_p_9539A43C] FOREIGN KEY ([id]) REFERENCES [sf_wfl_definition]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: ALTER TABLE [sf_wfl_dfnition_sf_permissions] ADD CONSTRAINT [ref_sf_wfl_dfntn_sf_p_456F23F6] FOREIGN KEY ([id2]) REFERENCES [sf_permissions]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: ALTER TABLE [sf_wfl_dfntn_prmssnst_bjct_ttl] ADD CONSTRAINT [ref_sf_wfl_dfntn_prms_AE143675] FOREIGN KEY ([id]) REFERENCES [sf_wfl_definition]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: ALTER TABLE [sf_wfl_dfntn_spprtd_prmssn_sts] ADD CONSTRAINT [ref_sf_wfl_dfntn_sppr_035D33DF] FOREIGN KEY ([id]) REFERENCES [sf_wfl_definition]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: ALTER TABLE [sf_wfl_lvl_cstm_mil_recipients] ADD CONSTRAINT [ref_sf_wfl_lvl_cstm_m_AB996DAB] FOREIGN KEY ([id]) REFERENCES [sf_wfl_level]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_dfntn_sf_prmssns_d2' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_dfntn_sf_prmssns_d2] ON [sf_wfl_dfnition_sf_permissions]([id2])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_dfntn_prmssnst_bjct' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_dfntn_prmssnst_bjct] ON [sf_wfl_dfntn_prmssnst_bjct_ttl]([val])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_dfntn_spprtd_prmssn' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_dfntn_spprtd_prmssn] ON [sf_wfl_dfntn_spprtd_prmssn_sts]([val])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_lvl_wrkflw_dfntn_id' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_lvl_wrkflw_dfntn_id] ON [sf_wfl_level]([workflow_definition_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_lvl_cstm_ml_rcpnts_' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_lvl_cstm_ml_rcpnts_] ON [sf_wfl_lvl_cstm_mil_recipients]([val])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_prmssn_wrkflw_lvl_d' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_prmssn_wrkflw_lvl_d] ON [sf_wfl_permission]([workflow_level_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_scp_wrkflw_dfntn_id' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_scp_wrkflw_dfntn_id] ON [sf_wfl_scope]([workflow_definition_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:26
+
+Message: -- Index 'idx_sf_wfl_type_scope_scope_id' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_wfl_type_scope_scope_id] ON [sf_wfl_type_scope]([scope_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:28
+
+Message: START : Upgrading Workflow model...
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:28
+
+Message: DONE : Create workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:28
+
+Message: DONE : Upgrade workflow definition sitefinity permissions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:28
+
+Message: DONE : Upgrade workflow definition permission set object title.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:29
+
+Message: DONE : Upgrade workflow definition supported permission sets.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:29
+
+Message: DONE : Create first level of workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:29
+
+Message: DONE : Create second level of workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:29
+
+Message: DONE : Create workflow permissions for first level of workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:29
+
+Message: DONE : Create workflow permissions for second level of workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:30
+
+Message: DONE : Create custom mail recipients for first level of workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:30
+
+Message: DONE : Create custom mail recipients for second level of workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:30
+
+Message: DONE : Create workflow scopes for workflow definitions.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:30
+
+Message: DONE : Create workflow type scopes for workflow scopes.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:30
+
+Message: DONE : Create site item links for workflow scopes.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:31
+
+Message: DONE : Create workflow scopes per site and language.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:31
+
+Message: PASSED : Upgraded Workflow Model
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:34
+
+Message: PASSED : Updade content location single item filters.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:52
+
+Message: Db Migration Complexity: Trivial
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:52
+
+Message: Adding an index(indices) definition for a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:52
+
+Message: Adding a new table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Telerik.Sitefinity.OutputCache.OutputCacheDependency
+CREATE TABLE [sf_ocd_dpndncies] (
+    [type_id] int NOT NULL,                 -- <TypeId>k__BackingField
+    [item_key] nvarchar(255) NOT NULL,      -- <ItemKey>k__BackingField
+    [cache_key] nvarchar(255) NOT NULL,     -- cacheKey
+    CONSTRAINT [pk_sf_ocd_dpndncies] PRIMARY KEY ([item_key], [cache_key])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Telerik.Sitefinity.OutputCache.OutputCacheItem
+CREATE TABLE [sf_ocd_itms] (
+    [url] NVARCHAR(MAX) NULL,               -- <Url>k__BackingField
+    [status] int NOT NULL,                  -- <Status>k__BackingField
+    [site_map_node_key] varchar(255) NULL,  -- <SiteMapNodeKey>k__BackingField
+    [site_id] uniqueidentifier NULL,        -- <SiteId>k__BackingField
+    [priority] int NOT NULL,                -- <Priority>k__BackingField
+    [lang] VARCHAR(84) NULL,                -- <Language>k__BackingField
+    [key] nvarchar(255) NOT NULL,           -- <Key>k__BackingField
+    [host] nvarchar(255) NULL,              -- <Host>k__BackingField
+    [e_tag] nvarchar(255) NULL,             -- <ETag>k__BackingField
+    [date_modified] datetime NULL,          -- <DateModified>k__BackingField
+    [cacheVaryKey] nvarchar(255) NULL,      -- <CacheVaryKey>k__BackingField
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_ocd_itms] PRIMARY KEY ([key])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Telerik.Sitefinity.OutputCache.OutputCacheDependencyType
+CREATE TABLE [sf_ocd_typs] (
+    [type_name] nvarchar(255) NOT NULL,     -- <TypeName>k__BackingField
+    [id] int IDENTITY NOT NULL,             -- id
+    CONSTRAINT [pk_sf_ocd_typs] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Telerik.Sitefinity.SyncLock.Lock
+CREATE TABLE [sf_sync_lock] (
+    [lckr] uniqueidentifier NULL,           -- locker
+    [last_mod] datetime NOT NULL,           -- lastModified
+    [id] nvarchar(255) NOT NULL,            -- id
+    CONSTRAINT [pk_sf_sync_lock] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Index 'idx_sf_ocd_typ_id' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_ocd_typ_id] ON [sf_ocd_dpndncies]([type_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Index 'idx_sf_ocd_dpndncies_cache_key' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_ocd_dpndncies_cache_key] ON [sf_ocd_dpndncies]([cache_key])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Index 'idx_sf_ocd_ste_nde' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_ocd_ste_nde] ON [sf_ocd_itms]([site_map_node_key])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Index 'idx_sf_ocd_itms_ste' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_ocd_itms_ste] ON [sf_ocd_itms]([site_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Index 'idx_sf_ocd_itms_dte_md' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_ocd_itms_dte_md] ON [sf_ocd_itms]([date_modified])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:45:57
+
+Message: -- Index 'idx_sf_ocd_typ_nme' was not detected in the database. It will be created
+CREATE UNIQUE INDEX [idx_sf_ocd_typ_nme] ON [sf_ocd_typs]([type_name])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:07
+
+Message: Db Migration Complexity: Trivial
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:07
+
+Message: Adding a foreign key constraint(s) to a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:07
+
+Message: Adding an index(indices) definition for a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:07
+
+Message: Adding a new table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Telerik.Sitefinity.Multisite.Model.SiteDataSourceLink
+CREATE TABLE [sf_site_data_source_links] (
+    [site_id] uniqueidentifier NULL,        -- siteId
+    [provider_name] varchar(255) NULL,      -- providerName
+    [is_default] BIT NOT NULL,              -- isDefault
+    [id] uniqueidentifier NOT NULL,         -- id
+    [dataSource_name] varchar(255) NULL,    -- dataSourceName
+    [application_name] varchar(255) NULL,   -- applicationName
+    CONSTRAINT [pk_sf_site_data_source_links] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Telerik.Sitefinity.Multisite.Model.Site
+CREATE TABLE [sf_sites] (
+    [staging_url] NVARCHAR(255) NULL,       -- stagingUrl
+    [site_map_root_node_id] uniqueidentifier NULL, -- siteMapRootNodeId
+    [site_configuration_mode] int NOT NULL, -- siteConfigurationMode
+    [requires_ssl] BIT NOT NULL,            -- requiresSsl
+    [redirectIfOffline] BIT NOT NULL,       -- redirectIfOffline
+    [ownr] uniqueidentifier NULL,           -- owner
+    [offlineSiteMessage] NVARCHAR(255) NULL, -- offlineSiteMessage
+    [offlinePageToRedirect] uniqueidentifier NULL, -- offlinePageToRedirect
+    [nme] NVARCHAR(255) NULL,               -- name
+    [live_url] NVARCHAR(255) NULL,          -- liveUrl
+    [is_offline] BIT NOT NULL,              -- isOffline
+    [isLocatedInMainMenu] BIT NOT NULL,     -- isLocatedInMainMenu
+    [is_default] tinyint NOT NULL,          -- isDefault
+    [inherits_permissions] tinyint NOT NULL, -- inheritsPermissions
+    [id] uniqueidentifier NOT NULL,         -- id
+    [home_page_id] uniqueidentifier NULL,   -- homePageId
+    [front_end_login_page_url] NVARCHAR(255) NULL, -- frontEndLoginPageUrl
+    [front_end_login_page_id] uniqueidentifier NULL, -- frontEndLoginPageId
+    [default_frontend_template_id] uniqueidentifier NULL, -- defaultFrontendTemplateId
+    [default_culture_key] NVARCHAR(80) NULL, -- defaultCultureKey
+    [can_inherit_permissions] tinyint NOT NULL, -- canInheritPermissions
+    [application_name] varchar(255) NULL,   -- applicationName
+    [voa_version] smallint NOT NULL,        -- <internal-version>
+    CONSTRAINT [pk_sf_sites] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- System.Collections.Generic.IList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Telerik.Sitefinity.Multisite.Model.Site.cultureKeys
+CREATE TABLE [sf_sites_culture_keys] (
+    [id] uniqueidentifier NOT NULL,
+    [seq] int NOT NULL,                     -- <sequence>
+    [val] varchar(255) NULL,                -- <value>
+    CONSTRAINT [pk_sf_sites_culture_keys] PRIMARY KEY ([id], [seq])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- System.Collections.Generic.IList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] Telerik.Sitefinity.Multisite.Model.Site.domainAliases
+CREATE TABLE [sf_sites_domain_aliases] (
+    [id] uniqueidentifier NOT NULL,
+    [seq] int NOT NULL,                     -- <sequence>
+    [val] varchar(255) NULL,                -- <value>
+    CONSTRAINT [pk_sf_sites_domain_aliases] PRIMARY KEY ([id], [seq])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Telerik.Sitefinity.Model.ProviderTrackedList`1[[Telerik.Sitefinity.Security.Model.Permission, Telerik.Sitefinity.Model, Version=13.2.7500.0, Culture=neutral, PublicKeyToken=b28c218413bdf563]] Telerik.Sitefinity.Multisite.Model.Site.permissions
+CREATE TABLE [sf_sites_sf_permissions] (
+    [id] uniqueidentifier NOT NULL,
+    [seq] int NOT NULL,                     -- <sequence>
+    [id2] uniqueidentifier NULL,
+    CONSTRAINT [pk_sf_sites_sf_permissions] PRIMARY KEY ([id], [seq])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- System.Collections.Generic.IList`1[[Telerik.Sitefinity.Multisite.Model.SiteDataSourceLink, Telerik.Sitefinity.Model, Version=13.2.7500.0, Culture=neutral, PublicKeyToken=b28c218413bdf563]] Telerik.Sitefinity.Multisite.Model.Site.siteDataSourceLinks
+CREATE TABLE [sf_sts_sf_st_data_source_links] (
+    [id] uniqueidentifier NOT NULL,
+    [seq] int NOT NULL,                     -- <sequence>
+    [id2] uniqueidentifier NULL,
+    CONSTRAINT [pk_sf_sts_sf_st_dt_sr_50593D9B] PRIMARY KEY ([id], [seq])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: ALTER TABLE [sf_sites_culture_keys] ADD CONSTRAINT [ref_sf_sts_cltr_kys_s_821E5F65] FOREIGN KEY ([id]) REFERENCES [sf_sites]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: ALTER TABLE [sf_sites_domain_aliases] ADD CONSTRAINT [ref_sf_sts_dmn_lss_sf_D75D2B5C] FOREIGN KEY ([id]) REFERENCES [sf_sites]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: ALTER TABLE [sf_sites_sf_permissions] ADD CONSTRAINT [ref_sf_sts_sf_prmssns_2BA50E5F] FOREIGN KEY ([id]) REFERENCES [sf_sites]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: ALTER TABLE [sf_sites_sf_permissions] ADD CONSTRAINT [ref_sf_sts_sf_prmssns_591B75AD] FOREIGN KEY ([id2]) REFERENCES [sf_permissions]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: ALTER TABLE [sf_sts_sf_st_data_source_links] ADD CONSTRAINT [ref_sf_sts_sf_st_dt_s_EA6AAC25] FOREIGN KEY ([id]) REFERENCES [sf_sites]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: ALTER TABLE [sf_sts_sf_st_data_source_links] ADD CONSTRAINT [ref_sf_sts_sf_st_dt_s_5186CA5E] FOREIGN KEY ([id2]) REFERENCES [sf_site_data_source_links]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Index 'idx_sf_site_name' was not detected in the database. It will be created
+CREATE UNIQUE INDEX [idx_sf_site_name] ON [sf_sites]([nme])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Index 'idx_sf_site_live_url' was not detected in the database. It will be created
+CREATE UNIQUE INDEX [idx_sf_site_live_url] ON [sf_sites]([live_url])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Index 'idx_sf_sites_culture_keys_val' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_sites_culture_keys_val] ON [sf_sites_culture_keys]([val])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Index 'idx_sf_stes_domain_aliases_val' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_stes_domain_aliases_val] ON [sf_sites_domain_aliases]([val])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Index 'idx_sf_stes_sf_permissions_id2' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_stes_sf_permissions_id2] ON [sf_sites_sf_permissions]([id2])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 12-01-2021 16:46:14
+
+Message: -- Index 'idx_sf_sts_sf_st_dt_src_lnks_d' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_sts_sf_st_dt_src_lnks_d] ON [sf_sts_sf_st_data_source_links]([id2])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:47:05 PM
+
+Message: PASSED : NewsModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:47:31 PM
+
+Message: PASSED : BlogsModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:47:59 PM
+
+Message: PASSED : EventsModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:49:44 PM
+
+Message: PASSED : LibrariesModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:49:57 PM
+
+Message: PASSED : ListsModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:31 PM
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:31 PM
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:31 PM
+
+Message: Adding an index(indices) to an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:31 PM
+
+Message: Modifying a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:31 PM
+
+Message: Removing an index(indices) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: -- Dropping index 'sf_idsrv_claims_email' because the column 'email' used by the index is changed.
+DROP INDEX [sf_idsrv_claims_email] ON [sf_idsrv_claims]
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: -- add column for field externalProviderName
+ALTER TABLE [sf_idsrv_claims] ADD [ext_provider_name] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: UPDATE [sf_idsrv_claims] SET [ext_provider_name] = ' '
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: ALTER TABLE [sf_idsrv_claims] ALTER COLUMN [ext_provider_name] NVARCHAR(255) NOT NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: -- add column for field externalId
+ALTER TABLE [sf_idsrv_claims] ADD [ext_id] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: UPDATE [sf_idsrv_claims] SET [ext_id] = ' '
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: ALTER TABLE [sf_idsrv_claims] ALTER COLUMN [ext_id] NVARCHAR(255) NOT NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: -- Column was read from database as: [email] varchar(255) not null
+-- modify column for field email
+ALTER TABLE [sf_idsrv_claims] ALTER COLUMN [email] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:36 PM
+
+Message: -- Index 'sf_idsrv_claims_external' was not detected in the database. It will be created
+CREATE INDEX [sf_idsrv_claims_external] ON [sf_idsrv_claims]([ext_provider_name], [ext_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:50:45 PM
+
+Message: PASSED : ContentModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:31 PM
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:31 PM
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:31 PM
+
+Message: Modifying a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:34 PM
+
+Message: -- add column for field recommendedCharactersCount
+ALTER TABLE [sf_mb_dynamic_module_field] ADD [recommended_characters_count] int NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:34 PM
+
+Message: -- Column was read from database as: [instructional_text] nvarchar(255) null
+-- modify column for field instructionalText
+ALTER TABLE [sf_mb_dynamic_module_field] ALTER COLUMN [instructional_text] NVARCHAR(MAX) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:50 PM
+
+Message: PASSED : ModuleBuilderModule : Upgrade to 6800 (Upgrades the dynamic module child types with the 'sfParent' field. Creates a column 'parent_id' in the DB for every child type.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:50 PM
+
+Message: PASSED : ModuleBuilderModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:51:59 PM
+
+Message: PASSED: Remove foreign keys for dynamic content
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:23 PM
+
+Message: Db Migration Complexity: Complex
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:23 PM
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:23 PM
+
+Message: Modifying a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:28 PM
+
+Message: -- Column was read from database as: [is_template] tinyint not null
+-- modify column for field isTemplate
+ALTER TABLE [sf_publishing_point] ALTER COLUMN [is_template] tinyint NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:28 PM
+
+Message: -- add column for field inboundPipesTemplate
+ALTER TABLE [sf_publishing_point] ADD [inbound_pipes_template] varchar(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:28 PM
+
+Message: -- add column for field itemFilterStrategy
+ALTER TABLE [sf_publishing_point_settings] ADD [item_filter_strategy] int NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:28 PM
+
+Message: UPDATE [sf_publishing_point_settings] SET [item_filter_strategy] = 0
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:28 PM
+
+Message: ALTER TABLE [sf_publishing_point_settings] ALTER COLUMN [item_filter_strategy] int NOT NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:43 PM
+
+Message: Db Migration Complexity: Trivial
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:43 PM
+
+Message: Adding a foreign key constraint(s) to a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:43 PM
+
+Message: Adding a new table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:48 PM
+
+Message: -- Telerik.Sitefinity.Publishing.Model.Dynamic_7194f0b6a89d63aca747ff000001ef3c
+CREATE TABLE [dynmc_7194f0b689d63c747ff00000] (
+    [id] uniqueidentifier NOT NULL,
+    [username] NVARCHAR(255) NULL,          -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.Username
+    [user_avatar] NVARCHAR(255) NULL,       -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.UserAvatar
+    [title] NVARCHAR(255) NULL,             -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.Title
+    [summary] NVARCHAR(MAX) NULL,           -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.Summary
+    [publication_date] DATETIME NULL,       -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.PublicationDate
+    [pipe_id] NVARCHAR(255) NULL,           -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.PipeId
+    [owner_last_name] NVARCHAR(255) NULL,   -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.OwnerLastName
+    [owner_first_name] NVARCHAR(255) NULL,  -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.OwnerFirstName
+    [owner_email] NVARCHAR(255) NULL,       -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.OwnerEmail
+    [lnk] NVARCHAR(255) NULL,               -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.Link
+    [lang_id] NVARCHAR(255) NULL,           -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.LangId
+    [item_hash] NVARCHAR(255) NULL,         -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.ItemHash
+    [expiration_date] DATETIME NULL,        -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.ExpirationDate
+    [content_type] NVARCHAR(255) NULL,      -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.ContentType
+    [content] NVARCHAR(MAX) NULL,           -- Dynamic_7194f0b6a89d63aca747ff000001ef3c.Content
+    CONSTRAINT [pk_dynmc_7194f0b689d6_3CE1F1B1] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:48 PM
+
+Message: -- Telerik.Sitefinity.Publishing.Model.Dynamic_9c93f0b6a89d63aca747ff000001ef3c
+CREATE TABLE [dynmc_9c93f0b689d63c747ff00000] (
+    [id] uniqueidentifier NOT NULL,
+    [username] NVARCHAR(255) NULL,          -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.Username
+    [user_avatar] NVARCHAR(255) NULL,       -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.UserAvatar
+    [title] NVARCHAR(255) NULL,             -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.Title
+    [summary] NVARCHAR(MAX) NULL,           -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.Summary
+    [publication_date] DATETIME NULL,       -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.PublicationDate
+    [pipe_id] NVARCHAR(255) NULL,           -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.PipeId
+    [owner_last_name] NVARCHAR(255) NULL,   -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.OwnerLastName
+    [owner_first_name] NVARCHAR(255) NULL,  -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.OwnerFirstName
+    [owner_email] NVARCHAR(255) NULL,       -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.OwnerEmail
+    [lnk] NVARCHAR(255) NULL,               -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.Link
+    [lang_id] NVARCHAR(255) NULL,           -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.LangId
+    [item_hash] NVARCHAR(255) NULL,         -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.ItemHash
+    [expiration_date] DATETIME NULL,        -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.ExpirationDate
+    [content_type] NVARCHAR(255) NULL,      -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.ContentType
+    [content] NVARCHAR(MAX) NULL,           -- Dynamic_9c93f0b6a89d63aca747ff000001ef3c.Content
+    CONSTRAINT [pk_dynmc_9c93f0b689d6_DE185592] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:48 PM
+
+Message: ALTER TABLE [dynmc_7194f0b689d63c747ff00000] ADD CONSTRAINT [ref_dynmc_7194f0b689d_8FDC5C75] FOREIGN KEY ([id]) REFERENCES [sf_dynamic_type_base]([id]) ON DELETE CASCADE
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:52:48 PM
+
+Message: ALTER TABLE [dynmc_9c93f0b689d63c747ff00000] ADD CONSTRAINT [ref_dynmc_9c93f0b689d_2C02A1D9] FOREIGN KEY ([id]) REFERENCES [sf_dynamic_type_base]([id]) ON DELETE CASCADE
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:53:05 PM
+
+Message: PASSED : SearchModule : Upgrade to 7100 (Creates a search index to be used for searching in advanced settings.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:53:05 PM
+
+Message: PASSED : SearchModule : Upgrade to 7500 (Creates a search index to be used for backend search.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:55:39 PM
+
+Message: PASSED : CommentsModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:55:49 PM
+
+Message: PASSED : ServiceApiModule : Upgrade to 7200 (Process single related data as multiple.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:55:49 PM
+
+Message: PASSED : ServiceApiModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:56:01 PM
+
+Message: PASSED : AdminBridgeModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:57:26 PM
+
+Message: PASSED : DashboardModule : Upgrade to 6800 (Adds new System Status widget.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:57:26 PM
+
+Message: PASSED : DashboardModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:57:42 PM
+
+Message: Forms module is disabled. Any existing DEC, now called Sitefinity Insight mappings between contact properties and form fields would be broken and no longer reported. Recreate them manually after enabling the Forms module.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:57:42 PM
+
+Message: Personalization module is disabled. Existing segments with DEC in criteria's titles are not rebranded as Sitefinity Insight. Characteristics could be manually removed and then added again with new naming after Personalization module is enabled.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:02 PM
+
+Message: PASSED : DataIntelligenceConnectorModule : Upgrade to 7000 (Migrates the MVC Forms Mapping for Sitefinity Insight by adding a new key with the respective data in ConnectorsDataMapping.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:02 PM
+
+Message: PASSED : DataIntelligenceConnectorModule : Upgrade to 7300 (Re-install the registration of the campaign criterion. Updating the group names of the Sitefinity Insight criterions.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:02 PM
+
+Message: PASSED : DataIntelligenceConnectorModule : Upgrade to 7300 (Rebranding DEC connector backend pages' titles and URLs to Sitefinity Insight)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:02 PM
+
+Message: PASSED : DataIntelligenceConnectorModule : Upgrade to 7300 (Rebranding forms mappings with DEC key to Sitefinity Insight)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:02 PM
+
+Message: PASSED : DataIntelligenceConnectorModule : Upgrade to 7300 (Rebranding DEC personalization segments criteria titles to Sitefinity Insight)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:02 PM
+
+Message: PASSED : DataIntelligenceConnectorModule : Upgrade to 7300 (The Insights page menu item now redirects to the Sitefinity Insight home page.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:02 PM
+
+Message: PASSED : DataIntelligenceConnectorModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:20 PM
+
+Message: Db Migration Complexity: Extending
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:20 PM
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:24 PM
+
+Message: -- add column for field <TemplateSenderName>k__BackingField
+ALTER TABLE [sf_notif_msg_template] ADD [sender_name] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:24 PM
+
+Message: -- add column for field <TemplateSenderEmailAddress>k__BackingField
+ALTER TABLE [sf_notif_msg_template] ADD [sender_email] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:24 PM
+
+Message: -- add column for field <ResolveKey>k__BackingField
+ALTER TABLE [sf_notif_msg_template] ADD [resolve_key] NVARCHAR(255) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:24 PM
+
+Message: -- add column for field <LastModifiedById>k__BackingField
+ALTER TABLE [sf_notif_msg_template] ADD [last_modified_by_id] uniqueidentifier NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:24 PM
+
+Message: -- add column for field <LastModified>k__BackingField
+ALTER TABLE [sf_notif_msg_template] ADD [last_modified] datetime NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:39 PM
+
+Message: PASSED : ForumsModule : Upgrade to 7100 (Update forums email notifications templates.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:58:39 PM
+
+Message: PASSED : ForumsModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:08 PM
+
+Message: Db Migration Complexity: Trivial
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:08 PM
+
+Message: Adding a foreign key constraint(s) to a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:08 PM
+
+Message: Adding an index(indices) definition for a new table(s), the create table statement(s) is included as well.
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:08 PM
+
+Message: Adding a new table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: -- Telerik.Sitefinity.MobileFormats.Model.MobileFormatContentType
+CREATE TABLE [sf_mbl_frmt_cntnt_types] (
+    [siteId] uniqueidentifier NULL,         -- siteId
+    [name] varchar(255) NULL,               -- name
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [id] uniqueidentifier NOT NULL,         -- id
+    [fullName] varchar(255) NULL,           -- fullName
+    [displayName] NVARCHAR(255) NULL,       -- displayName
+    [app_name] varchar(255) NULL,           -- applicationName
+    CONSTRAINT [pk_sf_mbl_frmt_cntnt_types] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: -- Telerik.Sitefinity.MobileFormats.Model.MobileFormatDefinition
+CREATE TABLE [sf_mbl_frmt_dfntns] (
+    [siteId] uniqueidentifier NULL,         -- siteId
+    [setting_name] varchar(255) NULL,       -- settingName
+    [name] varchar(255) NULL,               -- name
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [id] uniqueidentifier NOT NULL,         -- id
+    [app_name] varchar(255) NULL,           -- applicationName
+    [active] tinyint NOT NULL,              -- active
+    CONSTRAINT [pk_sf_mbl_frmt_dfntns] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: -- System.Collections.Generic.IList`1[[Telerik.Sitefinity.MobileFormats.Model.MobileFormatDefinition, Telerik.Sitefinity.MobileFormats, Version=13.2.7500.0, Culture=neutral, PublicKeyToken=b28c218413bdf563]] Telerik.Sitefinity.MobileFormats.Model.MobileFormatContentType.definitions
+CREATE TABLE [sf_mbl_frmt_sf_mbl_cntnt_typs] (
+    [id] uniqueidentifier NOT NULL,
+    [id2] uniqueidentifier NOT NULL,
+    CONSTRAINT [pk_sf_mbl_frmt_sf_mbl_CFE44BB5] PRIMARY KEY ([id], [id2])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: -- Telerik.Sitefinity.MobileFormats.Model.MobileFormatTemplate
+CREATE TABLE [sf_mbl_frmt_templates] (
+    [use_custom_canonical_url] tinyint NOT NULL, -- useCustomCanonicalUrl
+    [template_name] varchar(255) NULL,      -- templateName
+    [mbl_frmt_dfntn_id] uniqueidentifier NULL, -- mobileFormatDefinition
+    [mbl_frmt_cntnt_type_id] uniqueidentifier NULL, -- mobileFormatContentType
+    [layout_template_name] varchar(255) NULL, -- layoutTemplateName
+    [last_modified] datetime NOT NULL,      -- lastModified
+    [id] uniqueidentifier NOT NULL,         -- id
+    [custom_canonical_url_format] NVARCHAR(510) NULL, -- customCanonicalUrlFormat
+    [app_name] varchar(255) NULL,           -- applicationName
+    CONSTRAINT [pk_sf_mbl_frmt_templates] PRIMARY KEY ([id])
+)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: ALTER TABLE [sf_mbl_frmt_sf_mbl_cntnt_typs] ADD CONSTRAINT [ref_sf_mbl_frmt_sf_mb_081E6663] FOREIGN KEY ([id]) REFERENCES [sf_mbl_frmt_cntnt_types]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: ALTER TABLE [sf_mbl_frmt_sf_mbl_cntnt_typs] ADD CONSTRAINT [ref_sf_mbl_frmt_sf_mb_CA69080E] FOREIGN KEY ([id2]) REFERENCES [sf_mbl_frmt_dfntns]([id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: -- Index 'idx_sf_mbl_frmt_sf_mbl_cntnt_t' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_mbl_frmt_sf_mbl_cntnt_t] ON [sf_mbl_frmt_sf_mbl_cntnt_typs]([id2])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: -- Index 'idx_sf_mbl_frmt_tmplts_mbl_frm' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_mbl_frmt_tmplts_mbl_frm] ON [sf_mbl_frmt_templates]([mbl_frmt_cntnt_type_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:14 PM
+
+Message: -- Index 'idx_sf_mbl_frmt_tmplts_mbl_fr2' was not detected in the database. It will be created
+CREATE INDEX [idx_sf_mbl_frmt_tmplts_mbl_fr2] ON [sf_mbl_frmt_templates]([mbl_frmt_dfntn_id])
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:33 PM
+
+Message: PASSED : PackagingModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 4:59:43 PM
+
+Message: PASSED : RecycleBinModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:00:04 PM
+
+Message: PASSED : SitemapGeneratorModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:05:51 PM
+
+Message: Db Migration Complexity: Extending
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:05:52 PM
+
+Message: Adding a column(s) on an existing table(s).
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:05:56 PM
+
+Message: -- add column for field FormDraft.rules
+ALTER TABLE [sf_draft_pages] ADD [rules] NVARCHAR(MAX) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:05:56 PM
+
+Message: -- add column for field FormDraft.<SendConfirmationEmail>k__BackingField
+ALTER TABLE [sf_draft_pages] ADD [send_confirmation_email] BIT NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:05:56 PM
+
+Message: -- add column for field rules
+ALTER TABLE [sf_form_description] ADD [rules] NVARCHAR(MAX) NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:05:56 PM
+
+Message: -- add column for field <SendConfirmationEmail>k__BackingField
+ALTER TABLE [sf_form_description] ADD [send_confirmation_email] BIT NULL
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:06:17 PM
+
+Message: PASSED : FormsModule : Upgrade to 7100 (Update forms email notifications templates.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:06:17 PM
+
+Message: PASSED : FormsModule : Upgrade to 7100 (Update forms subscribers.)
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 1/12/2021 5:06:17 PM
+
+Message: PASSED : FormsModule : Upgrade to 7400 (Update module backend pages title localization.)
+
+
+----------------------------------------

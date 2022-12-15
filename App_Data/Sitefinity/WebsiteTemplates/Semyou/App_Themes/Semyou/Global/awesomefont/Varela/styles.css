@@ -1,0 +1,11 @@
+
+@font-face {
+  font-family: 'Varela';
+  src: url('../fonts/Varela/Varela.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/Varela/Varela.otf')  format('opentype'),
+	   url('../fonts/Varela/Varela.woff') format('woff'), 
+	   url('../fonts/Varela/Varela.ttf')  format('truetype'), 
+	   url('../fonts/Varela/Varela.svg#Varela') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

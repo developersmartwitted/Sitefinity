@@ -1,0 +1,211 @@
+#page {
+	margin-top: 0;
+}
+
+.site-header-wrap {
+	-webkit-print-color-adjust: exact;
+}
+
+.site-header-wrap,
+.admin-bar .site-header-wrap {
+	display: block !important;
+	margin-top: -10px;
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+
+.site-header-wrap
+.utility-navigation,
+.search-container,
+.header-dropdown,
+.header-mobile-dropdown-toggle,
+.header-mobile-dropdown,
+.entry-featured-category-wrap,
+.entry-featured-category-box,
+.entry-meta,
+.email-subscribe-tab,
+.email-subscribe-form,
+.back-to-top-wrap,
+.comments-area,
+.addthis-single-wrap,
+.site-footer,
+.cs-hero-image,
+.cs-video-container-wrap,
+.html5-video-player {
+	display: none;
+}
+
+.site {
+	margin-top: 50px;
+}
+
+.site-branding {
+	background-color: #ffffff;
+}
+
+.site-title {
+	print-color-adjust: exact;
+	-webkit-print-color-adjust: exact;
+}
+
+.site-title {
+	display: block;
+	height: auto;
+	line-height: 1;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: auto;
+}
+
+.site-title a {
+	height: 70px;
+	line-height: 1;
+	vertical-align: top;
+}
+
+.ms-ob-logo {
+	height: 70px;
+	line-height: 1.0;
+	width: 258.5275px;
+}
+
+.ms-ob-icon-bg {
+	display: none;
+	width: 0;
+}
+
+.ms-ob-icon {
+	width: 10px;
+}
+
+.ms-ob-icon,
+.ms-ob-text {
+	fill: #000;
+}
+
+.ms-ob-text {
+	margin-left: -10px;
+}
+
+.site-content {
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.cs-hero-image {
+	height: 0;
+}
+
+.has-hero .cs-title-box,
+.has-hero #cs-entry-meta,
+article.col-10 {
+	width: 100%;
+}
+
+.has-hero #cs-entry-meta {
+	padding-top: 0;
+}
+
+h1,
+.cs-post-title {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+.cs-title-box {
+	padding: 1.0rem 0;
+}
+
+.inverted {
+	background-color: #ffffff;
+	color: #555555;
+}
+
+.has-hero .cs-title-row,
+.no-hero .cs-title-row {
+	background-image: none;
+	background-color: #ffffff;
+}
+
+.has-hero #cs-entry-meta,
+.has-hero .cs-title-row,
+.no-hero .cs-title-row {
+	margin-top: 0;
+}
+
+.cs-content {
+	font-size: 18px;
+}
+
+.customer-stories .wrap,
+.customer-stories .entry-content,
+.cs-content,
+.customer-stories .cs-marketing-fullwidth .wrap,
+.cs-title-box,
+.has-hero #cs-entry-meta {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	width: 100%
+}
+
+.cs-featured-image,
+.cs-interior-content {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.cs-content blockquote {
+	color: #222222;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	font-size: 28px;
+	margin: 30px auto;
+	padding: 30px 0;
+	padding: 3rem 0;
+}
+
+.customer-stories .cs-marketing-fullwidth .cs-marketing-content {
+	margin-right: 0;
+	width: 100%;
+}
+
+.customer-stories .cs-marketing-fullwidth {
+	background: none;
+	border-top: 1px solid #eee;
+}
+
+.customer-stories .cs-marketing-fullwidth .wrap {
+	padding-top: 30px;
+	padding-top: 3rem;
+}
+
+.site-content a.cs-marketing-btn::after {
+	content: " (" attr(href) ") ";
+	display: block;
+	font-size: 14px;
+}
+
+.cs-marketing-btn {
+	color: #000000;
+	float: none;
+	font-size: 20px;
+	font-size: 2rem;
+	margin-left: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.cs-marketing-btn.highlight,
+.cs-marketing-btn.basic {
+	background: #ffffff;
+	color: #000000;
+}

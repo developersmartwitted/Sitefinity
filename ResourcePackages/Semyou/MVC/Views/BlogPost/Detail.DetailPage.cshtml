@@ -1,0 +1,135 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentDetailsViewModel
+
+@using Telerik.Sitefinity;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Web.DataResolving;
+
+
+<div class="@Model.CssClass" @Html.InlineEditingAttributes(Model.ProviderName, Model.ContentType.FullName, (Guid)Model.Item.Fields.Id)>
+    
+    <div class="post-template-default single single-post postid-227688 single-format-standard desktop group-blog news">
+
+         <div id="content" class="site-content">
+
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+
+                    <article id="post-227688" class="post type-post">
+
+                       <div class="modal-overlay">
+
+                       </div>
+                        <header class="entry-header">
+                            <div class="entry-featured-category-wrap">
+                                <div class="entry-featured-category-box featured-category-box-office-365">
+                                    <a class="back-link">
+                                        Back
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <h1 class="entry-title">
+                                <span @Html.InlineEditingFieldAttributes("Title", "ShortText")>@Model.Item.Fields.Title</span>
+                                @*BlogSemyou Forms Public Preview for BlogSemyou commercial customers*@
+                            </h1>
+
+                            <div class="entry-meta">
+                                <div class="when-who">
+                                    <span class="byline">
+                                        @Html.Resource("By")
+                                        @*by*@
+                                        <span class="author vcard">
+                                            <a class="url fn n" href="#">
+
+                                                @DataResolver.Resolve(@Model.Item.DataItem, "Author", null)
+                                                @*BlogSemyou Team*@
+                                            </a>
+                                        </span>
+                                    </span>,
+
+                                    <span class="posted-on">
+                                        on
+
+                                        <time class="entry-date published" >
+                                            @*June 23, 2017*@
+                                            @Model.Item.GetDateTime("PublicationDate", "MMM d, yyyy, HH:mm tt")
+                                        </time>
+
+                                        <time class="updated">
+                                            @*June 22, 2017*@
+                                        </time>
+
+                                    </span>
+
+                                </div>
+                                <span class="comments-sep v-sep">|</span>
+                                <a class="num-comments" href="#">
+                                    @*0*@
+                                    @Html.CommentsCount(string.Empty, @Model.Item.DataItem)
+                                    Comments
+                                </a>
+                                <span class="v-sep">|</span>
+
+                                <span class="addthis_toolbox" addthis:url="#" addthis:title="" addthis:description="">
+                                    <span class="addthis_counter" style="display: inline-block;">
+                                        @*22*@
+                                    </span>
+                                    <div class="atclear">
+
+                                    </div>
+
+                                </span>
+                            </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+
+
+
+                        <div class="entry-content">
+
+                            @*<div @Html.InlineEditingFieldAttributes("Summary", "LongText")>@Html.Raw(Model.Item.Fields.Summary)</div>*@
+
+                            <div @Html.InlineEditingFieldAttributes("Content", "LongText")>@Html.Raw(Model.Item.Fields.Content)</div>
+
+
+                            <p>
+
+                                @*—The BlogSemyou Forms team*@
+                            </p>
+                        </div><!-- .entry-content -->
+
+
+                        @*<footer class="entry-meta">
+                            <h2>Tags</h2>
+                            <ul class="tag-list">
+                                <li><a href="#">Excel</a></li>
+                                <li><a href="#">BlogSemyou</a></li>
+                                <li><a href="#">BlogSemyou Online</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Enterprise</a></li>
+                            </ul>
+
+                        </footer>*@  
+                    <!-- .entry-meta -->
+
+                        @*<a href="#" class="back-to-top-wrap">
+                            <div class="back-to-top">
+                                <span class="icon-arrow-up"></span>
+                                <span class="to-top-text-link">Top</span>
+                            </div>
+                        </a>*@
+
+                    </article><!-- #post-## -->
+                </main><!-- #main -->
+            </div><!-- #primary -->
+        </div>
+
+    </div>
+
+
+
+    @Html.CommentsList(@Model.Item.DataItem)
+</div>
+

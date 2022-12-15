@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+<body class="full_body_box">
+
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+<div id="doc-wrapper">
+        <header>
+
+	        <div class="logo" >
+                <%--<a href="/documentation">--%>
+                    <asp:ContentPlaceHolder ID="cphLogo" runat="server"></asp:ContentPlaceHolder>
+                <%--</a>--%>                
+             </div>
+            <div class="search_part">
+                <div class="search_box">
+                    <asp:ContentPlaceHolder ID="cphSearch" runat="server"></asp:ContentPlaceHolder>                 
+                </div>
+                <div style="float:left;">
+                    <%--<div class="search_select">--%>
+                    <asp:ContentPlaceHolder ID="cphSearchSelect" runat="server"></asp:ContentPlaceHolder>
+                        <%--<a href="#">DE
+                        <img src="images/down_arrow.png" alt="" /></a>--%>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="cphContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <footer>
+
+        <div class="copy_right_text"> 
+            <asp:ContentPlaceHolder ID="cphFooter" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <div class="social_media_box">
+          <asp:ContentPlaceHolder ID="cphFooterRight" runat="server"></asp:ContentPlaceHolder>        
+        </div>  
+
+        <div class="clearfix"></div>
+        </footer>
+</div>  
+<script type="text/javascript">
+    //$(document).ready(function() {
+    //    //$(".content_right_box").height($(document).height() - 190);
+    //    //$(".content_right_box").css({ 'height': (($(window).height()) - 190) + 'px' });
+    //});
+</script>
+        <script type="text/javascript">
+
+            var windowHeight = $(window).height();
+            var LeftHeight = $(".content_left_box").height();
+            var RightHeight = $(".content_right_box").height();
+            var First = 0;
+
+            $(document).ready(function() {
+
+                // $(".content_right_box").css({ 'height': $(".content_listing").height() + 'px' });
+                //$(".k-icon").click(function () {
+                //    aler("test");
+                //    alert($(document).height());
+                //    //$(".content_right_box").height($(document).height() - 190);
+                //    //$(".content_right_box").css({ 'height': (($(window).height()) - 190) + 'px' });
+                //});
+
+                //alert($(".k-item").aria - expanded);
+
+                $(window).scroll(function() {
+
+                    if (First == 0 && $(window).scrollTop() > 0) {
+                        First = $(window).scrollTop();
+                    }
+
+                    if ($(window).scrollTop() > 0) {
+                        if (LeftHeight < RightHeight) {
+
+                            $(".content_left_box").css({ 'height': (($(".content_right_box").height()) - 100) + 'px' });
+                            // $(".content_listing").css({ 'position': 'fixed' });
+
+                            if (windowHeight < $(".content_listing").height()) {
+                                if (($(window).scrollTop() - 20 <= ($(".content_left_box").height() - $(window).height())) && ($(window).scrollTop() + 20 >= ($(".content_left_box").height() - $(window).height()))) {
+                                    $(".content_listing").css({ 'position': 'fixed' });
+                                    var t = '-' + $(window).scrollTop() - 70 + "px";
+                                    $(".content_listing").css({ 'top': t });
+                                    $(".content_listing").css({ 'width': '300px' });
+                  
+                                }
+                            }
+                            else {
+                                 $(".content_listing").css({ 'position': 'fixed' });
+                                 $(".content_listing").css({ 'top': '70px' });
+                                 $(".content_listing").css({ 'width': '300px' });
+                  
+
+                            }
+                           // $(".content_left_box").find(".content_listing").css({ 'border-right': '2px solid #E4E4E4' });
+                            //$(".content_right_box").css({ 'border-right': 'none' , 'margin-left':'0px'});
+                            $(".content_listing").css({ 'height': $(".content_right_box").height() });
+                        
+                        }
+                        else {
+                            $(".content_left_box").css({ 'height': 'auto' });
+                            $(".content_listing").css({ 'position': '' });
+                            $(".content_listing").css({ 'width': '' });
+                            //$(".content_right_box").css({ 'border-left': '2px solid #E4E4E4','margin-left':'-40px'  });
+                            //$(".content_left_box").find(".content_listing").css({ 'border-right': 'none' });
+                             $(".content_listing").css({ 'height': 'auto' });
+                      
+                           }
+                             
+                            
+                    }
+                    console.log("window");
+                    console.log($(window).height());
+                    console.log("ffff");
+                    console.log($(".content_left_box").height() - $(window).height())
+                    console.log("scroll");
+                    console.log($(window).scrollTop());
+                    console.log("left");
+                    console.log($(".content_left_box").css('height'));
+                    if ($(window).scrollTop() <= 100) {
+                        $(".content_left_box").css({ 'height': 'auto' });
+                        $(".content_listing").css({ 'position': '' });
+                        $(".content_listing").css({ 'top': '' });
+                        $(".content_listing").css({ 'width': '' });
+                    }
+
+                    // $(".content_right_box").css({ 'height': $(".content_listing").height() + 'px' });
+                    //$(document).on('click','.k-icon', function () {
+                    //    alert($(document).height());
+                    //    $(".content_right_box").height($(document).height() - 190);
+                    //});                    
+                });
+            });
+
+    </script>
+        
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('a[href="https://www.apps.semyou.com/registration"]').attr('href', 'https://apps.semyou.com/registration/');
+            $('a[href="https://registration.semyou.com"]').attr('href', 'https://apps.semyou.com/registration/');
+        });
+
+        </script>
+</body>
+  
+</html>

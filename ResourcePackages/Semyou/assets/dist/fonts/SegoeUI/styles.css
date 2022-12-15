@@ -1,0 +1,10 @@
+
+@font-face {
+  font-family: 'SegoeR';
+  src: url('../fonts/SegoeUI/SegoeUI.eot?#iefix') format('embedded-opentype'), 
+  	   url('../fonts/SegoeUI/SegoeUI.woff') format('woff'), 
+  	   url('../fonts/SegoeUI/SegoeUI.ttf')  format('truetype'), 
+  	   url('../fonts/SegoeUI/SegoeUI.svg#SegoeUI') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

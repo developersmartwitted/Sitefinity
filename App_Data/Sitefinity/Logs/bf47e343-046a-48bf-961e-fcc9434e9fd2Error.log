@@ -1,0 +1,58 @@
+----------------------------------------
+ActivityId: 00000000-0000-0000-0000-000000000000
+
+Timestamp: 1/13/2021 4:06:39 AM
+
+Message: HandlingInstanceID: 4d64b9cd-d97f-4486-9237-6315ca123ade
+An exception of type 'System.NullReferenceException' occurred and was caught.
+-----------------------------------------------------------------------------
+01/13/2021 09:36:39
+Type : System.NullReferenceException, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Message : Object reference not set to an instance of an object.
+Source : Telerik.Sitefinity
+Help link : 
+Data : System.Collections.ListDictionaryInternal
+TargetSite : Void VerifySectionRegistered(System.Type, System.String)
+HResult : -2147467261
+Stack Trace :    at Telerik.Sitefinity.Configuration.Config.VerifySectionRegistered(Type sectionType, String sectionName)
+   at Telerik.Sitefinity.Configuration.Config.GetSectionInternal(Type sectionType, Boolean safeMode, String sectionName)
+   at Telerik.Sitefinity.Configuration.Config.GetSectionPrivate(Type sectionType, Boolean safeMode, String sectionName)
+   at Telerik.Sitefinity.Configuration.Config.GetSectionPrivate[TSection](Boolean safeMode)
+   at Telerik.Sitefinity.Localization.ResourceManager.get_ProvidersSettings()
+   at Telerik.Sitefinity.Data.ManagerBase`1.GetProvidersSettings()
+   at Telerik.Sitefinity.Data.ManagerBase`1.Initialize()
+
+Additional Info:
+
+MachineName : DESKTOP-LV0TFGI
+TimeStamp : 1/13/2021 4:06:39 AM
+FullName : Telerik.Sitefinity.Utilities, Version=13.2.7500.0, Culture=neutral, PublicKeyToken=b28c218413bdf563
+AppDomainName : 7d6de115-1-132549843399459944
+ThreadIdentity : DESKTOP-LV0TFGI\Dell
+WindowsIdentity : DESKTOP-LV0TFGI\Dell
+
+
+Category: ErrorLog
+
+Priority: 0
+
+EventId: 90030
+
+Severity: Error
+
+Title:Enterprise Library Exception Handling
+
+Machine: DESKTOP-LV0TFGI
+
+App Domain: 7d6de115-1-132549843399459944
+
+ProcessId: 11344
+
+Process Name: F:\VisualStudio2019\Microsoft Visual Studio\2019\Community\Common7\IDE\Microsoft.VisualStudio.Web.Host.exe
+
+Thread Name: 
+
+Win32 ThreadId:10684
+
+Extended Properties: 
+----------------------------------------

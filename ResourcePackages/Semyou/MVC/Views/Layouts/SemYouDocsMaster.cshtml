@@ -1,0 +1,148 @@
+﻿@using System.Web.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Services;
+
+<!DOCTYPE html>
+<html @Html.RenderLangAttribute()>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>SEMYOU</title>
+    <link rel="icon" href="/Sitefinity/WebsiteTemplates/SemYouNew/App_Themes/Semyou/Global/images/new_images/favicon-1.ico" type="image/icon" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16798457-2"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16798457-2');
+    </script>
+
+
+    @Html.Section("head")
+    @Html.Script(Url.Content("http://code.jquery.com/jquery-latest.min.js"), "head")
+    @Html.StyleSheet(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/css/docstyle.min.css?sf=34343"), "head")
+    @Html.StyleSheet(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/js/slimmenu/dist/css/slimmenu.min.css"), "head")
+    @Html.StyleSheet(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/js/owlcarousel/assets/owl.carousel.min.css"), "head")
+    @Html.StyleSheet(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/js/owlcarousel/assets/owl.theme.default.min.css"), "head")
+    @Html.StyleSheet(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/js/treeview/jquery.treeView.css"), "head")
+    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/js/owlcarousel/owl.carousel.min.js"), "head")
+    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/js/slimmenu/dist/js/jquery.slimmenu.min.js"), "head")
+    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/js/treeview/jquery.treeView.js"), "head")
+</head>
+
+<body>
+    @Html.Section("top")
+
+    <div class="sfPublicWrapper" id="PublicWrapper">
+        <div class="sy-wrapper">
+            @Html.SfPlaceHolder("cphCookie")
+            <header class="sy-header" id="Cookies_box">
+                <div class="sy-logo">
+                    @Html.SfPlaceHolder("cphLogo")
+
+                </div>
+                <div class="sy-left-menu">
+                    @Html.SfPlaceHolder("cphNavigation")
+                </div>
+                <div class="clear"></div>
+                @Html.SfPlaceHolder("cphBanner")
+
+            </header>
+            @Html.SfPlaceHolder("cphContent")
+
+            <footer class="sy-footer sy-blackline">
+                @Html.SfPlaceHolder("cphFooter")
+            </footer>
+        </div>
+    </div>
+
+    @* Inline editing scripts and helpers. They should be available only when inline editing is possible. *@
+    @if (Html.ShouldRenderInlineEditing())
+    {
+        @Html.Script(ScriptRef.MicrosoftAjax, "top")
+        @Html.Script(ScriptRef.MicrosoftAjaxCore, "top")
+        @Html.Script(ScriptRef.JQuery, "top")
+
+        @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.jquery.ba-outside-events.min.js"), "top")
+        @Html.Script(ScriptRef.KendoAll, "top")
+        @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.RequireJS.require.min.js"), "top")
+        @Html.InlineEditingManager(false)
+    }
+
+    @Html.Section("bottom")
+</body>
+<script>
+
+
+    $(document).ready(function () {
+
+        $(".sy-left-content").css("height", $(document).height() - parseInt(240));
+        $(".sy-left-content").css("margin-bottom", "40px");
+        $(window).scroll(function () {
+
+            if ($(window).scrollTop() > 66) {
+                $(".sy-left-content").css("margin-top", "-90px");
+                $(".sy-left-content").css("height", $(window).height() - 110);
+                $(".left-side-wrp").css("top", "0");//also change left-side content
+            }
+            else {
+                $(".sy-left-content").css("margin-top", "0px");
+                $(".left-side-wrp").css("top", "85px");//also change left-side content
+            }
+
+            leftside_modif();
+        });
+
+        //--------------
+
+
+
+        function leftside_modif() {
+            var tempbtm = "15px";
+            var scrollheight = $("body").height() - $(window).height();
+            if ($(window).scrollTop() >= (scrollheight - $(".sy-wrapper > footer").height())) {
+                $(".left-side-wrp").css("bottom", ($(".sy-wrapper > footer").height() + 20) + "px");
+            }
+            else $(".left-side-wrp").css("bottom", tempbtm);
+        }
+        function footer_modif() {
+            if ($(window).height() > $("body").height()) {
+                $(".sy-wrapper > footer").css({ "position": "fixed", "width": "100%", "bottom": "0" });
+                var fh = $(".sy-wrapper > footer").height() + 20;
+                $(".container .sy-center-content").css({ "padding-bottom": fh + "px" });
+            }
+            else {
+                $(".sy-wrapper > footer").css({ "position": "relative" });
+                $(".container .sy-center-content").css({ "padding-bottom": "0" });
+            }
+        }
+        leftside_modif();
+        footer_modif();
+        $(window).resize(function () {
+            footer_modif();
+            leftside_modif();
+
+            if ($(window).width() > 800) {
+                $('.treeview').show();
+            }
+        });
+
+
+        $('.treeview').slimmenu({
+            resizeWidth: '800',
+            collapserTitle: '',
+            animSpeed: 'medium',
+            indentChildren: true,
+            childrenIndenter: '&raquo;'
+        });
+    });
+
+</script>
+ 
+</html>

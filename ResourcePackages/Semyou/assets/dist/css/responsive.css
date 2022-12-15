@@ -1,0 +1,244 @@
+/*Responsive*/
+
+@media only screen and (max-width: 1920px) {
+.container{
+    max-width: 1500px;
+}
+}
+
+
+@media only screen and (max-width: 1048px) {
+.smllogo {
+    padding: 8px 15px 0px 0px;
+}
+
+.wsmenu-list > li > a{
+    margin: 0  15px;
+}
+
+.btn-info{
+    margin-top: 20px;
+}
+
+.theme-bg-light{
+    padding: 20px 0;
+}
+
+}
+
+@media only screen and (max-width: 991px) {
+.top-menu li {
+    border:none;
+}
+.top-menu{
+    display: none;
+}
+
+ .wsmenu-click {
+    height: 52px;
+  }
+
+.wsmenu .btn{
+    margin-right: 28px!important;
+    float: none!important;
+    display: block!important;
+}
+
+.wsmenu-list > li > a{
+    margin: 0;
+}
+
+.wsmenu-list > li:hover > a, .mobile-sub .wsmenu-submenu li:hover > a{
+    background-color: #22c1f7!important;
+    color: #fff!important;
+    text-decoration: none;
+}
+
+.wsmenu-list>li> a.menu-arrow:after{
+    display: none;
+}
+
+.wsmenu ul li a{
+    font-size: inherit;
+}
+
+.wsmenu-list > li:hover > .wsmenu-click i{
+    color: #fff;
+}
+
+}
+
+
+@media only screen and (max-width: 767px) {
+
+.main-menu-holder{
+    margin: 10px 0;
+}
+.txt-pr{
+  padding-right: 15px;
+}
+
+.main-menu-holder .navbar-nav .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.main-menu li a{
+    color: #fff!important;
+}
+.mobile-align-left{
+    text-align: left !important;
+}
+.main-menu{
+    margin-top: 20px; 
+    background: #a6a6a6;
+    padding: 20px 0;
+}
+
+.main-menu > li > ul > li:hover ul{
+    display: block;
+}
+
+.rounded-box, .moblie-gap img{
+    margin-bottom: 20px;
+}
+
+.title{
+    font-size: 26px;
+}
+
+
+.title-lg{
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.mobile-center{
+    text-align: center!important;
+}
+
+.mobile-gap{
+    padding-top:30px; 
+}
+
+.mobile-device{
+    margin-top: 1em;
+}
+.mobile-device-ml{
+    margin-left: 15px !important;
+}
+
+.mobile-device-ml img, .pr-0, .img-fluid.mobile-device-ml{
+    padding-right: 15px!important;
+}
+
+
+}
+
+
+@media only screen and (max-width: 575px) {
+
+.header-info-area h2 {
+    font-size: 34px;
+}
+
+ .btn{
+    margin: 7px 0;
+    font-size: 16px;
+ }
+
+ .footer-title{
+    margin: 20px 0;
+ }
+
+ .header-info-area {
+    min-height: 482px;
+    text-align: center;
+}
+
+.sub-title{
+    font-size: 22px;
+}
+
+.mr-m-2{
+    margin-right: 10px;
+}
+
+.footer, .copyright{
+    text-align: center!important;
+}
+
+.btn{
+    white-space: normal;
+}
+
+}
+
+/*gantt responsive*/
+
+
+
+@media screen and (min-width: 1751px){
+    div.gantt-left-pd{
+        padding-left: 11%;
+    }
+}
+
+@media screen and (max-width: 1750px) and (min-width: 1600px){
+    div.gantt-left-pd{
+        padding-left: 7%;
+    }
+}
+
+
+@media screen and (min-width: 992px){
+    
+    .gantt-ul.navbar-nav .nav-link{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    div.semyou-btn a{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    div.gantt-project,div.gantt-project img{
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
+}
+
+
+/*kanban responsive*/
+
+@media screen and (min-width: 1751px){
+    div.kanban-left-pd{
+        padding-left: 11%;
+    }
+}
+
+@media screen and (max-width: 1750px) and (min-width: 1600px){
+    div.kanban-left-pd{
+        padding-left: 7%;
+    }
+}
+
+@media screen and (min-width: 992px){
+   
+
+    .kanban-ul.navbar-nav .nav-link{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    div.semyou-btn a{
+        font-size: 16px;
+    }
+}
+
+.mb-screen .owl-dots {
+    z-index: 99999 !important;
+    position: relative !important;
+    margin-top: -70px !important;
+
+}

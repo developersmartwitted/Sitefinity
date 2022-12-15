@@ -1,0 +1,216 @@
+﻿ @charset "utf-8";
+/* CSS Document */
+
+
+/*@font-face {
+  font-family: 'Varela';
+  src: url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/Varela/Varela.eot?#iefix') format('embedded-opentype'),  
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/Varela/Varela.otf')  format('opentype'),
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/Varela/Varela.woff') format('woff'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/Varela/Varela.ttf')  format('truetype'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/Varela/Varela.svg#Varela') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeSB';
+  src: url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Semibold/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'),  
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Semibold/SegoeUI-Semibold.woff') format('woff'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Semibold/SegoeUI-Semibold.ttf')  format('truetype'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Semibold/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeL';
+  src: url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Light/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),  
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Light/SegoeUI-Light.woff') format('woff'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Light/SegoeUI-Light.ttf')  format('truetype'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI-Light/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeR';
+  src: url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI/SegoeUI.eot?#iefix') format('embedded-opentype'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI/SegoeUI.woff') format('woff'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI/SegoeUI.ttf')  format('truetype'), 
+  url('//semyou.com/Sitefinity/WebsiteTemplates/SemyouNew/App_Themes/Semyou/global/fonts/SegoeUI/SegoeUI.svg#SegoeUI') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+@font-face {
+  font-family: 'Varela';
+  src: url('fonts/Varela/Varela.eot?#iefix') format('embedded-opentype'),  
+  url('fonts/Varela/Varela.otf')  format('opentype'),
+  url('fonts/Varela/Varela.woff') format('woff'), 
+  url('fonts/Varela/Varela.ttf')  format('truetype'), 
+  url('fonts/Varela/Varela.svg#Varela') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeSB';
+  src: url('fonts/SegoeUI-Semibold/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'),  
+  url('fonts/SegoeUI-Semibold/SegoeUI-Semibold.woff') format('woff'), 
+  url('fonts/SegoeUI-Semibold/SegoeUI-Semibold.ttf')  format('truetype'), 
+  url('fonts/SegoeUI-Semibold/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeL';
+  src: url('fonts/SegoeUI-Light/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),  
+  url('fonts/SegoeUI-Light/SegoeUI-Light.woff') format('woff'), 
+  url('fonts/SegoeUI-Light/SegoeUI-Light.ttf')  format('truetype'), 
+  url('fonts/SegoeUI-Light/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SegoeR';
+  src: url('fonts/SegoeUI/SegoeUI.eot?#iefix') format('embedded-opentype'), 
+  url('fonts/SegoeUI/SegoeUI.woff') format('woff'), 
+  url('fonts/SegoeUI/SegoeUI.ttf')  format('truetype'), 
+  url('fonts/SegoeUI/SegoeUI.svg#SegoeUI') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.sfNavHorizontalDropDown.sfNavList ul{
+    display:none;
+}
+
+.explore_data > h1,.tour_hadding h1,
+.overview_of_benefits h1, .benefits_change li h1,
+.advantages.support_list.clear.mt50px.datasench li h1,
+.daten > h1{    font-family: "SegoeL"!important;
+    font-size: 36px !important;
+    margin: 0px !important;
+    letter-spacing: 2px;
+    font-weight: normal !important;}
+.benefits_change li h1{
+    line-height: normal;
+    font-size: 25px!important;
+    letter-spacing: 0px;
+}
+.sfContentBlock .cloud-office h1{font-size:29px!important;}
+.ld .list_text h1{font-size:18px!important}
+.content_data p, .content_data span,
+.sfContentBlock p,
+.sfContentBlock .one_data{
+        font-family: "segoeL";
+    font-size: 19px!important;
+    letter-spacing: 1px;
+    line-height:normal;
+}
+.sfContentBlock .even_wp p, .sfContentBlock .odd_wp p{
+    font-size: 15px!important;
+}
+
+.sem-you{height:250px!important;}
+.benefits_change li {
+    height: 380px!important;
+}
+
+.sfContentBlock .header-kopieren p{
+    margin-top:5px;
+}
+
+h6{font-size:18px!important;}
+.tour_data h1{
+                  font-family: "SegoeL";
+    font-size: 36px !important;
+    letter-spacing: 2px;
+    font-weight: normal !important;
+}
+.tour_data p{line-height:normal!important;}
+.c_c_img span{font-size:14px!important;}
+.advantages.support_list.clear.mt50px.datasench li h1{
+        color: #58585A;
+}
+.desktop_list li a{
+    font-size: 19px!important;
+    font-weight: normal!important;
+        font-family: "segoeL"!important;
+}
+.daten li{height:200px!important;}
+.daten > h1{font-weight:normal!important;}
+
+.service1 > li{height:182px!important;}
+.service2 > li{height:230px!important;}
+.service3 > li{height:300px!important;}
+.service6 > li{height:205px!important;}
+.service8 > li{height:255px!important;}
+.service9 > li{height:215px!important;}
+
+.sfContentBlock .cloud-office .cloud_ofc.old p{font-size: 17px!important;}
+
+.mt30px.flexible > h2 {
+    font-weight:normal!important;
+}
+.investment_roi_services ul li > h6{
+        font-family: "segoeL"!important;
+    font-weight:bold;
+}
+.desktop_list li a{
+    font-size:16px!important;
+}
+.der-roi-effect span{font-size:16px!important;}
+.top.Investionskosten p:first-child, .investionskosten-mouth, .reach_roi h2, .reach_roi p {
+    font-family: "segoeL"!important;
+    font-weight:bold;
+}
+.top.Investionskosten p:first-child{font-size:17px!important;}
+.security_text h4 {
+    font-size: 22px!important;
+    font-family: "segoeL"!important;
+    font-weight:bold!important;
+}
+.one_data_a h1, .promise h1{
+    font-family: "segoeL"!important;
+}
+.even_right_box{
+    /*top:-25px!important;*/
+}
+.transfer .kopieren {
+    width: 600px!important;
+}
+
+.directors_list li{height:175px!important;}
+.photo-text > h1{
+    font-size:23.6px!important;
+}
+
+.sfError {
+    color:red;
+}
+
+.faq_data input, .sfFieldWrp input, 
+.sfFieldWrp textarea,
+.faq_data .sfDropdownList.sfFieldWrp select{border:1px solid #999!important;outline:none;color:#000!important;font-family: "segoeL"!important;font-size:16px!important;}
+.faq_data .sfDropdownList.sfFieldWrp select{height:33px!important;padding:7px 0 7px 7px;margin-bottom:10px;}
+.sfFieldWrp textarea{width:586px!important;padding:7px!important;}
+.faq_data .sfTxtLbl{color:#000;}
+#cphContent_ctl04_ctl00_ctl00_formControls .sf_cols{margin-top:0!important;}
+.sfFormSubmit.sfSubmitBtnSmall input {
+    background: #15abde none repeat scroll 0 0;
+    border: 1px solid #15abde!important;
+    font-family: "SegoeR"!important;
+    font-size: 17px!important;
+    padding: 10px 30px;
+    width: auto!important;
+    height: auto!important;
+    color: #fff !important;
+    text-transform:uppercase;
+    cursor:pointer;
+}
+
+#cphContent_ctl04_ctl00_ctl00_ctl03_ctl00_ctl00_textBox_write,
+#cphContent_ctl04_ctl00_ctl00_ctl04_ctl00_ctl00_textBox_write,
+#cphContent_ctl04_ctl00_ctl00_ctl05_ctl00_ctl00_textBox_write,
+#cphContent_ctl04_ctl00_ctl00_ctl06_ctl00_ctl00_textBox_write,
+#cphContent_ctl04_ctl00_ctl00_ctl07_ctl00_ctl00_textBox_write,
+#cphContent_ctl04_ctl00_ctl00_ctl08_ctl00_ctl00_textBox_write
+{border-left:4px solid #15abde!important;}
